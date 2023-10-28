@@ -2,6 +2,8 @@ import type { Metadata } from 'next';
 
 import { siteConfig } from "@/config/site";
 
+import Header from '@/components/header/header';
+
 export const metadata: Metadata = {
     title: "Home",
     openGraph: {
@@ -13,7 +15,7 @@ export const metadata: Metadata = {
         siteName: siteConfig.name,
         images: [
             {
-                url: `${siteConfig.url}/og.webp`,
+                url: `${siteConfig.ogImage}`,
                 width: 1920,
                 height: 1080,
             },
@@ -23,8 +25,11 @@ export const metadata: Metadata = {
 
 export default function Home() {
     return (
-        <main>
-            Hiii
-        </main>
+        <>
+            <Header />
+            <main>
+                Hiii
+            </main>
+        </>
     )
 }

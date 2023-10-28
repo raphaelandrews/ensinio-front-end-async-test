@@ -9,29 +9,31 @@ const styles = css`
     outline: 0;
     box-sizing: border-box;
   }
+
   html {
     scroll-behavior: smooth;
   }
+
   body {
+    font-size: 1rem;
     font-family: ${(props) => props.theme.fonts.primary};
-    background-color: ${(props) => props.theme.colors.background};
     color: ${(props) => props.theme.colors.primary};
+    min-height: 100dvh;
+    background: linear-gradient(to bottom right, hsl(252, 67%, 55%), hsl(195, 67%, 55%));
   }
+
   h1, h2, p {
     margin: 0;
   }
+
   ul {
     margin: 0;
     padding: 0;
     list-style: none;
   }
+
   a {
     text-decoration: none;
-  }
-  img {
-    max-width: 100%;
-    height: auto;
-    display: block;
   }
 `;
 

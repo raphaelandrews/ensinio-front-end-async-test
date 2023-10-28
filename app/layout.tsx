@@ -5,7 +5,7 @@ import GlobalStyles from '@/styles/global-styles';
 import { siteConfig } from "@/config/site";
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://ensinio.com'),
+  metadataBase: new URL('https://ensinio-frontend-challenge-ndrws.vercel.app'),
   title: {
     default: siteConfig.name,
     template: `%s | ${siteConfig.name}`,
@@ -30,6 +30,7 @@ export const metadata: Metadata = {
     siteName: siteConfig.name,
   },
 };
+
 export default function RootLayout({
   children,
 }: {
@@ -39,7 +40,6 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <Providers>
-          <GlobalStyles />
           {children}
         </Providers>
       </body>
