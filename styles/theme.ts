@@ -10,6 +10,9 @@ const theme = {
         accent: 'hsla(182, 100%, 45%)',
         border: 'hsla(240, 4%, 91%)',
     },
+    fonts: {
+        primary: 'Inter, sans-serif',
+    },
 };
 
 export default theme;

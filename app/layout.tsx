@@ -5,7 +5,7 @@ import GlobalStyles from '@/styles/global-styles';
 import { siteConfig } from "@/config/site";
 
 export const metadata: Metadata = {
-  metadataBase: new URL(''),
+  metadataBase: new URL('https://ensinio.com'),
   title: {
     default: siteConfig.name,
     template: `%s | ${siteConfig.name}`,

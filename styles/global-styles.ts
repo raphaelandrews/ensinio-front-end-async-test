@@ -1,3 +1,5 @@
+'use client'
+
 import { createGlobalStyle, css } from 'styled-components';
 
 const styles = css`
@@ -13,7 +15,7 @@ const styles = css`
   body {
     font-family: ${(props) => props.theme.fonts.primary};
     background-color: ${(props) => props.theme.colors.background};
-    color: ${(props) => props.theme.colors.text};
+    color: ${(props) => props.theme.colors.primary};
   }
   h1, h2, p {
     margin: 0;
