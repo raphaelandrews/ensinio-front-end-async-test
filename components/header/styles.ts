@@ -51,12 +51,6 @@ export const NavItem = styled.li`
   font-weight: 500;
   line-height: 105%;
   cursor: pointer;
-
-  &:hover {
-    .dropdown-content {
-      display: block;
-    }
-  }
 `;
 
 export const DropdownContent = styled.div`

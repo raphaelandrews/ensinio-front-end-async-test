@@ -16,13 +16,19 @@ import PersonIcon from "@/public/assets/person-icon.svg";
 
 import { Button, OutlineButton } from '@/components/button/button';
 import Separator from '../separator/separator';
+import LanguageMenu from './components/language-menu/language-menu';
 
 const Header: React.FC = () => {
     const [dropdownVisible, setDropdownVisible] = useState(false);
+    const [languageVisible, setLanguageVisible] = useState(true);
     const [menuVisible, setMenuVisible] = useState(false);
 
     const toggleMenu = () => {
         setMenuVisible(!menuVisible);
+    };
+
+    const toggleLanguageMenu = () => {
+        setLanguageVisible(!languageVisible);
     };
 
     return (
@@ -108,12 +114,15 @@ const Header: React.FC = () => {
                             Entrar
                         </Button>
                         <OutlineButton>Começar agora</OutlineButton>
-                        <Button>
+                        <Button onClick={toggleLanguageMenu}>
                             PT
                             <Image
                                 src={ChevronsDown}
                                 alt="Chevrons Down"
                             />
+                             {languageVisible && (
+                                <LanguageMenu />
+                            )}
                         </Button>
                     </S.HeaderButtons>
                 </S.MenuContainer>

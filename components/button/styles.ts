@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const Button = styled.button`
+    position: relative;
     display: flex;
     align-items: center;
     gap: .75rem;

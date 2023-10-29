@@ -4,11 +4,12 @@ import * as S from './styles';
 
 interface ButtonProps {
     children: ReactNode;
+    onClick?: () => void;
 }
 
-export const Button = ({ children }: ButtonProps) => {
+export const Button = ({ children, onClick }: ButtonProps) => {
     return (
-        <S.Button>
+        <S.Button onClick={onClick}>
             {children}
         </S.Button>
     );
