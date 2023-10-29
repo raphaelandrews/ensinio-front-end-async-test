@@ -19,7 +19,7 @@ const styles = css`
     font-family: ${(props) => props.theme.fonts.primary};
     color: ${(props) => props.theme.colors.primary};
     min-height: 100dvh;
-    background: linear-gradient(to bottom right, hsl(252, 67%, 55%), hsl(195, 67%, 55%));
+    background: ${(props) => props.theme.colors.background};
   }
 
   h1, h2, p {

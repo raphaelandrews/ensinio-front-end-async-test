@@ -3,13 +3,14 @@ import { ReactNode } from 'react';
 import * as S from './styles';
 
 interface ButtonProps {
+    className?: string;
     children: ReactNode;
     onClick?: () => void;
 }
 
-export const Button = ({ children, onClick }: ButtonProps) => {
+export const Button = ({ className, children, onClick }: ButtonProps) => {
     return (
-        <S.Button onClick={onClick}>
+        <S.Button className={className} onClick={onClick}>
             {children}
         </S.Button>
     );

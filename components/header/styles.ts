@@ -1,8 +1,11 @@
 import styled from 'styled-components';
 
 export const HeaderContainer = styled.div`
-  background-color: hsl(0, 0%, 0%, 0.03);
-  backdrop-filter: blur(30px);
+    position: absolute;
+    top: 0;
+    width: 100dvw;
+    background-color: hsl(0, 0%, 0%, 0.03);
+    backdrop-filter: blur(30px);
 `;
 
 export const HeaderWrapper = styled.header`
