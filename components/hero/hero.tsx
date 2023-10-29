@@ -17,7 +17,7 @@ const Hero = () => {
                 <div className="hero__content">
                     <span>
                         <Image src={DevicesIcon} alt="Devices icon" />
-                        PLATAFORMA ALL IN ONE
+                        <span>PLATAFORMA ALL IN ONE</span>
                     </span>
                     <h1>Sua escola online poderosa e lucrativa</h1>
                     <p>
