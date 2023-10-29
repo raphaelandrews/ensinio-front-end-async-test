@@ -35,6 +35,22 @@ const styles = css`
   a {
     text-decoration: none;
   }
+
+  button,
+  input[type="button"],
+  input[type="reset"],
+  input[type="submit"] {
+    background: none;
+    border: none;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+    outline: none;
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    text-align: inherit;
+}
 `;
 
 const GlobalStyles = createGlobalStyle`
