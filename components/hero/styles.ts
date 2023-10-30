@@ -17,6 +17,7 @@ export const HeroWrapper = styled.div`
         flex-direction: column;
         justify-content: center;
         gap: 3rem;
+        width: 50%;
     }
 
     span {
@@ -72,7 +73,7 @@ export const HeroWrapper = styled.div`
         display: flex;
         justify-content: flex-end;
         align-items: flex-end;
-        width: 70%;
+        width: 50%;
         
         image {
             max-width: 41rem;

@@ -4,6 +4,7 @@ import { siteConfig } from "@/config/site";
 
 import Header from '@/components/header/header';
 import Hero from '@/components/hero/hero';
+import Features from '@/components/features/features';
 
 export const metadata: Metadata = {
     title: "Home",
@@ -30,6 +31,7 @@ export default function Home() {
             <Header />
             <main>
                 <Hero />
+                <Features />
             </main>
         </>
     )

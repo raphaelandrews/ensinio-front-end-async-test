@@ -3,7 +3,8 @@ import styled from 'styled-components';
 export const HeaderContainer = styled.div`
     position: absolute;
     top: 0;
-    width: 100dvw;
+    width: 100%;
+    max-width: 100dvw;
     background-color: hsl(0, 0%, 0%, 0.03);
     backdrop-filter: blur(30px);
 `;
