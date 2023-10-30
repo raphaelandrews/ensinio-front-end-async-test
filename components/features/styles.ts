@@ -4,7 +4,10 @@ export const FeaturesContainer = styled.section`
 `
 
 export const FeaturesWrapper = styled.div`
+    display: flex;
+    flex-direction: column;
     padding: 6rem 0;
+    width: 90%;
     max-width: 1280px;
     margin: 0 auto;
 

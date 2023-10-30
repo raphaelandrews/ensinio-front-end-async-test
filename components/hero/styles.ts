@@ -7,17 +7,21 @@ export const HeroContainer = styled.section`
 
 export const HeroWrapper = styled.div`
     display: flex;
+    flex-direction: column;
     color: ${({ theme }) => theme.colors.background};
-    height: 700px;
+    width: 90%;
     max-width: 1280px;
+    height: auto;
     margin: 0 auto;
 
     .hero__content {
         display: flex;
         flex-direction: column;
         justify-content: center;
+        align-items: center;
         gap: 3rem;
-        width: 50%;
+        text-align: center;
+        padding-top: 3rem;
     }
 
     span {
@@ -52,6 +56,8 @@ export const HeroWrapper = styled.div`
 
     .hero__buttons {
         display: flex;
+        flex-direction: column;
+        align-items: center;
         gap: 2.75rem;
         font-weight: 600;
         line-height: 125%;
@@ -73,10 +79,37 @@ export const HeroWrapper = styled.div`
         display: flex;
         justify-content: flex-end;
         align-items: flex-end;
-        width: 50%;
+        margin-top: 3rem;
         
-        image {
+        img {
+            height: auto;
+            width: 100%;
             max-width: 41rem;
         }
+    }
+
+    @media screen and (min-width: 800px) {
+        flex-direction: row;
+        height: 30rem;
+
+        .hero__content {
+            align-items: inherit;
+            text-align: left;
+            width: 50%;
+            padding-top: 0;
+        }
+
+        .hero__buttons {
+            flex-direction: row;
+        }
+
+        .hero__image {
+            width: 50%;
+            margin-top: 0;
+        }
+    }
+    
+    @media screen and (min-width: 1200px) {
+        height: 44rem;
     }
 `
