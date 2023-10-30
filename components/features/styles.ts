@@ -24,9 +24,12 @@ export const FeaturesWrapper = styled.div`
 export const FeatuesIntro = styled.div`
     display: flex;
     justify-content: space-between;
+    flex-direction: column;
+    gap: 1rem;
 
     h3 {
         font-family: ${({ theme }) => theme.fonts.secondary};
+        font-size: 1rem;
         font-weight: 600;
         color: ${({ theme }) => theme.colors.secondary};
         line-height: 105%;
@@ -38,6 +41,7 @@ export const FeatuesIntro = styled.div`
         font-weight: 400;
         color: ${({ theme }) => theme.colors.muted};
         line-height: 150%;
+        align-self: end;
     }
 
     .features__subtitle {
@@ -45,12 +49,31 @@ export const FeatuesIntro = styled.div`
         align-items: center;
         gap: 1rem;
     }
+
+    @media screen and (min-width: 800px) {
+        flex-direction: row;
+        gap: 0;
+
+        p {
+            align-self: inherit;
+        }
+    }
 `
 
 export const FeaturesCards = styled.div`
     display: flex;
-    justify-content: space-between;
-    margin: 4rem 0;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 3rem;
+    margin: 2.5rem 0;
+
+    @media screen and (min-width: 1000px) {
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 0;
+        margin: 4rem 0;
+    }
 `
 
 export const FeaturesCard = styled.article`
@@ -75,7 +98,8 @@ export const FeaturesCard = styled.article`
 
 export const FeaturesFooter = styled.div`
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    gap: 2rem;
     padding: 2.25rem 0;
 
     a {
@@ -94,5 +118,11 @@ export const FeaturesFooter = styled.div`
         font-weight: 500;
         color: ${({ theme }) => theme.colors.muted};
         line-height: 150%;
+    }
+
+    @media screen and (min-width: 800px) {
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 0;
     }
 `
