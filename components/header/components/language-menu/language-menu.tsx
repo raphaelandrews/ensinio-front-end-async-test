@@ -29,7 +29,6 @@ const LanguageMenu = () => {
                                     <Image
                                         src={CheckIcon}
                                         alt="Check Icon"
-                                        className="language__menu___item-icon"
                                     />
                                 }
                             </Link>

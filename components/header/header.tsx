@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 import * as S from './styles';
 import { HeaderI18n } from '@/types/i18n';
@@ -27,6 +28,9 @@ const Header = (headerInt: HeaderProps) => {
     const [dropdownVisible, setDropdownVisible] = useState(false);
     const [languageVisible, setLanguageVisible] = useState(true);
     const [menuVisible, setMenuVisible] = useState(false);
+    const pathName = usePathname();
+
+    const activeLocale = pathName.substring(1);
 
     const toggleMenu = () => {
         setMenuVisible(!menuVisible);
@@ -54,7 +58,7 @@ const Header = (headerInt: HeaderProps) => {
                                 onMouseLeave={() => setDropdownVisible(false)}
                                 onClick={() => setDropdownVisible(!dropdownVisible)}
                             >
-                                 {headerInt.headerInt.navbar.solucoes}
+                                {headerInt.headerInt.navbar.solucoes}
                                 <Image
                                     src={ChevronsDown}
                                     alt="Chevrons Down"
@@ -62,12 +66,12 @@ const Header = (headerInt: HeaderProps) => {
                                 {dropdownVisible && (
                                     <S.DropdownContent>
                                         <>
-                                        <h2>{headerInt.headerInt.submenu.titulo}</h2>
+                                            <h2>{headerInt.headerInt.submenu.titulo}</h2>
                                             <S.DropdownList>
                                                 <S.DropdownItem>
                                                     <Image src={EadIcon} alt='Ead Icon' />
                                                     <div>
-                                                    <h3>{headerInt.headerInt.submenu.escola}</h3>
+                                                        <h3>{headerInt.headerInt.submenu.escola}</h3>
                                                         <p>Lorem ipsum dolor sit amet</p>
                                                     </div>
                                                 </S.DropdownItem>
@@ -75,21 +79,21 @@ const Header = (headerInt: HeaderProps) => {
                                             <S.DropdownItem>
                                                 <Image src={CommunityIcon} alt='Ead Icon' />
                                                 <div>
-                                                <h3>{headerInt.headerInt.submenu.comunidade}</h3>
+                                                    <h3>{headerInt.headerInt.submenu.comunidade}</h3>
                                                     <p>Lorem ipsum dolor sit amet</p>
                                                 </div>
                                             </S.DropdownItem>
                                             <S.DropdownItem>
                                                 <Image src={GamificationIcon} alt='Ead Icon' />
                                                 <div>
-                                                <h3>{headerInt.headerInt.submenu.gamificacao}</h3>
+                                                    <h3>{headerInt.headerInt.submenu.gamificacao}</h3>
                                                     <p>Lorem ipsum dolor sit amet</p>
                                                 </div>
                                             </S.DropdownItem>
                                             <S.DropdownItem>
                                                 <Image src={AppIcon} alt='Ead Icon' />
                                                 <div>
-                                                <h3>{headerInt.headerInt.submenu.aplicativo}</h3>
+                                                    <h3>{headerInt.headerInt.submenu.aplicativo}</h3>
                                                     <p>Lorem ipsum dolor sit amet</p>
                                                 </div>
                                             </S.DropdownItem>
@@ -117,16 +121,16 @@ const Header = (headerInt: HeaderProps) => {
                                 src={PersonIcon}
                                 alt="Person Icon"
                             />
-                           {headerInt.headerInt.navbar.entrar}
+                            {headerInt.headerInt.navbar.entrar}
                         </Button>
                         <OutlineButton>{headerInt.headerInt.navbar.comecar}</OutlineButton>
                         <Button onClick={toggleLanguageMenu}>
-                            PT
+                            {activeLocale.toUpperCase()}
                             <Image
                                 src={ChevronsDown}
                                 alt="Chevrons Down"
                             />
-                             {languageVisible && (
+                            {languageVisible && (
                                 <LanguageMenu />
                             )}
                         </Button>
