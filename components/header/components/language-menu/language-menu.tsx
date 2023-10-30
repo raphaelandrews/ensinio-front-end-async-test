@@ -6,17 +6,19 @@ import { usePathname } from 'next/navigation';
 
 import * as S from './styles';
 import { i18n } from '@/i18n.config';
-
-import CheckIcon from "@/public/assets/check-icon.svg";
+import useLanguageStore from "@/hooks/use-language-menu";
 import FormatLocaleFlag from "@/utils/format-locale-flag";
 
+import CheckIcon from "@/public/assets/check-icon.svg";
+
 const LanguageMenu = () => {
+    const { languageOpen, setLanguageOpen } = useLanguageStore();
     const pathName = usePathname();
     const activeLocale = pathName.substring(1);
     const redirectedPathName = (locale: string) => `/${locale}`;
 
     return (
-        <S.LanguageMenuContainer>
+        <S.LanguageMenuContainer onMouseLeave={() => setLanguageOpen(false)}>
             <S.LanguageMenuList>
                 {i18n.locales.map(lang => {
                     const isActiveLocale = activeLocale === lang;
@@ -39,5 +41,4 @@ const LanguageMenu = () => {
         </S.LanguageMenuContainer>
     );
 }
-
 export default LanguageMenu;

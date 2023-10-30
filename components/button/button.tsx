@@ -6,11 +6,21 @@ interface ButtonProps {
     className?: string;
     children: ReactNode;
     onClick?: () => void;
+    onMouseEnter?: () => void;
 }
 
-export const Button = ({ className, children, onClick }: ButtonProps) => {
+export const Button = ({
+    className,
+    children,
+    onClick,
+    onMouseEnter
+}: ButtonProps) => {
     return (
-        <S.Button className={className} onClick={onClick}>
+        <S.Button
+            className={className}
+            onClick={onClick}
+            onMouseEnter={onMouseEnter}
+        >
             {children}
         </S.Button>
     );

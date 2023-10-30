@@ -28,7 +28,7 @@ export const MenuContainer = styled.div<MenuContainerProps>`
     position: absolute;
     top: 100%;
     right: 0;
-    display: ${(props) => (props.visible ? 'flex' : 'none')};
+     //display: ${(props) => (props.visible ? 'flex' : 'none')};
     flex-direction: column;
     align-items: center;
     gap: 2.5rem;
@@ -65,72 +65,6 @@ export const NavItem = styled.li`
   line-height: 105%;
   cursor: pointer;
 `;
-
-export const DropdownContent = styled.div`
-  position: absolute;
-  top: 100%; /*2rem*/
-  right: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 2.5rem;
-  text-align: left;
-  padding: 1.5rem 2.5rem;
-  border-radius: 6px;
-  background-color: ${({ theme }) => theme.colors.background};
-  transition: display 0.3s ease-in-out;
-
-    @media screen and (min-width: 400px) {
-        white-space: nowrap;
-    }
-
-    @media screen and (min-width: 600px) {
-        padding: 2.75rem 3rem;
-    }
-
-    @media screen and (min-width: 1200px) {
-        right: inherit;
-        left: 0;
-    }
-
-    h2 {
-        font-size: .875rem;
-        font-weight: 600;
-        color: ${({ theme }) => theme.colors.tertiary};
-        letter-spacing: 0.15em;
-        line-height: 105%;
-        text-transform: uppercase;
-    }
-`;
-
-export const DropdownList = styled.ul`
-    display: grid;
-    gap: 2.5rem;
-
-    @media screen and (min-width: 1000px) {
-        grid-template-columns: 1fr 1fr;
-    }
-`
-
-export const DropdownItem = styled.li`
-    display: grid;
-    grid-template-columns: auto 1fr;
-    gap: 1rem;
-
-    h3 {
-        font-family: ${({ theme }) => theme.fonts.secondary};
-        font-size: .9375rem;
-        font-weight: 600;
-        color: ${({ theme }) => theme.colors.primary};
-        margin-bottom: .125rem;
-        line-height: 125%;
-    }
-
-    p {
-        font-size: .8125rem;
-        color: ${({ theme }) => theme.colors.muted};
-        line-height: 150%;
-    }
-`
 
 export const HamburgerMenu = styled.div`
     display: flex;

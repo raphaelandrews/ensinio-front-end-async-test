@@ -2,8 +2,8 @@ import styled from 'styled-components';
 
 export const LanguageMenuContainer = styled.div`
     position: absolute;
-    top: 100%; /*2rem*/
-    right: 0;
+    top: 2rem;
+    right: -50%;
     text-align: left;
     transition: display 0.3s ease-in-out;
     z-index: 1;
