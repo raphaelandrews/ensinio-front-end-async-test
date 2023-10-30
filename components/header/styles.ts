@@ -1,12 +1,13 @@
 import styled from 'styled-components';
 
 export const HeaderContainer = styled.div`
-    position: absolute;
+    position: fixed;
     top: 0;
     width: 100%;
     max-width: 100dvw;
     background-color: hsl(0, 0%, 0%, 0.03);
     backdrop-filter: blur(30px);
+    z-index: 1;
 `;
 
 export const HeaderWrapper = styled.header`
@@ -30,19 +31,27 @@ export const MenuContainer = styled.div<MenuContainerProps>`
     display: ${(props) => (props.visible ? 'flex' : 'none')};
     flex-direction: column;
     align-items: center;
+    gap: 2.5rem;
     padding: 1.5rem;
     border-radius: .375rem;
     background-color: hsl(224, 64%, 58%);
     box-shadow: rgba(0, 0, 0, 0.16) -4px 4px 14px;
 
-    @media (min-width: 1200px) {
+    .header__separator {
+        display: none;
+    }
+
+     @media screen and (min-width: 1200px) {
         position: relative;
         display: flex;
         flex-direction: row;
-        gap: 2.5rem;
         padding: 0;
         background-color: transparent;
         box-shadow: none;
+
+        .header__separator {
+            display: block;
+        }
     }
 `;
 
@@ -69,17 +78,16 @@ export const DropdownContent = styled.div`
   border-radius: 6px;
   background-color: ${({ theme }) => theme.colors.background};
   transition: display 0.3s ease-in-out;
-  z-index: 1;
 
-    @media (min-width: 400px) {
+    @media screen and (min-width: 400px) {
         white-space: nowrap;
     }
 
-    @media (min-width: 600px) {
+    @media screen and (min-width: 600px) {
         padding: 2.75rem 3rem;
     }
 
-    @media (min-width: 1200px) {
+    @media screen and (min-width: 1200px) {
         right: inherit;
         left: 0;
     }
@@ -98,7 +106,7 @@ export const DropdownList = styled.ul`
     display: grid;
     gap: 2.5rem;
 
-    @media (min-width: 1000px) {
+    @media screen and (min-width: 1000px) {
         grid-template-columns: 1fr 1fr;
     }
 `
@@ -130,7 +138,7 @@ export const HamburgerMenu = styled.div`
     gap: 0.375rem;
     cursor: pointer;
 
-    @media (min-width: 1200px) {
+    @media screen and (min-width: 1200px) {
         display: none;
     }
 
@@ -147,7 +155,7 @@ export const NavList = styled.ul`
     align-items: center;
     gap: 2.5rem;
     
-    @media (min-width: 1200px) {
+    @media screen and (min-width: 1200px) {
         position: relative;
         flex-direction: row;
     }
@@ -155,5 +163,12 @@ export const NavList = styled.ul`
 
 export const HeaderButtons = styled.div`
     display: flex;
-    gap: 2.5rem;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+
+    @media screen and (min-width: 1200px) {
+        flex-direction: row;
+        gap: 2.5rem;
+    }
 `

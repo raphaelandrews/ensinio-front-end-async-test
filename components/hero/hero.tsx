@@ -3,6 +3,7 @@
 import Image from "next/image";
 
 import * as S from "./styles";
+import { HeroI18n } from "@/types/i18n";
 
 import Man from "@/public/assets/man.png";
 import PlayIcon from "@/public/assets/play-icon.svg";
@@ -10,28 +11,28 @@ import DevicesIcon from "@/public/assets/devices-icon.svg";
 
 import { Button } from "@/components/button/button";
 
-const Hero = () => {
+interface HeroProps {
+    heroInt: HeroI18n;
+}
+
+const Hero = (heroInt: HeroProps) => {
     return (
         <S.HeroContainer>
             <S.HeroWrapper>
                 <div className="hero__content">
                     <span>
                         <Image src={DevicesIcon} alt="Devices icon" />
-                        <span>PLATAFORMA ALL IN ONE</span>
+                        <span>{heroInt.heroInt.intro}</span>
                     </span>
-                    <h1>Sua escola online poderosa e lucrativa</h1>
-                    <p>
-                        Tenha sua própria escola online 100% white label com rede social,
-                        gamificação, clube de assinaturas, ecommerce e sistema EAD
-                        completo.
-                    </p>
+                    <h1>{heroInt.heroInt.titulo}</h1>
+                    <p>{heroInt.heroInt.subtitulo}</p>
                     <div className="hero__buttons">
                         <Button className="hero__buttons___cta">
-                            Começar agora
+                            {heroInt.heroInt.comecar}
                         </Button>
                         <Button className="hero__buttons___play">
                             <Image src={PlayIcon} alt="Play icon" />
-                            Ver vídeo
+                            {heroInt.heroInt.video}
                         </Button>
                     </div>
                 </div>

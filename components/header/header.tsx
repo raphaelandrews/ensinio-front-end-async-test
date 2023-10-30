@@ -5,6 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 import * as S from './styles';
+import { HeaderI18n } from '@/types/i18n';
 
 import Logo from "@/public/assets/logo.svg";
 import ChevronsDown from "@/public/assets/chevrons-down.svg";
@@ -14,11 +15,15 @@ import GamificationIcon from "@/public/assets/gamification-icon.svg";
 import AppIcon from "@/public/assets/app-icon.svg";
 import PersonIcon from "@/public/assets/person-icon.svg";
 
-import { Button, OutlineButton } from '@/components/button/button';
-import Separator from '../separator/separator';
+import Separator from '@/components/separator/separator';
 import LanguageMenu from './components/language-menu/language-menu';
+import { Button, OutlineButton } from '@/components/button/button';
 
-const Header: React.FC = () => {
+interface HeaderProps {
+    headerInt: HeaderI18n;
+}
+
+const Header = (headerInt: HeaderProps) => {
     const [dropdownVisible, setDropdownVisible] = useState(false);
     const [languageVisible, setLanguageVisible] = useState(true);
     const [menuVisible, setMenuVisible] = useState(false);
@@ -49,7 +54,7 @@ const Header: React.FC = () => {
                                 onMouseLeave={() => setDropdownVisible(false)}
                                 onClick={() => setDropdownVisible(!dropdownVisible)}
                             >
-                                Soluções
+                                 {headerInt.headerInt.navbar.solucoes}
                                 <Image
                                     src={ChevronsDown}
                                     alt="Chevrons Down"
@@ -57,12 +62,12 @@ const Header: React.FC = () => {
                                 {dropdownVisible && (
                                     <S.DropdownContent>
                                         <>
-                                            <h2>SOLUÇÕES PRINCIPAIS</h2>
+                                        <h2>{headerInt.headerInt.submenu.titulo}</h2>
                                             <S.DropdownList>
                                                 <S.DropdownItem>
                                                     <Image src={EadIcon} alt='Ead Icon' />
                                                     <div>
-                                                        <h3>Crie uma Escola Online</h3>
+                                                    <h3>{headerInt.headerInt.submenu.escola}</h3>
                                                         <p>Lorem ipsum dolor sit amet</p>
                                                     </div>
                                                 </S.DropdownItem>
@@ -70,21 +75,21 @@ const Header: React.FC = () => {
                                             <S.DropdownItem>
                                                 <Image src={CommunityIcon} alt='Ead Icon' />
                                                 <div>
-                                                    <h3>Comunidade e rede social</h3>
+                                                <h3>{headerInt.headerInt.submenu.comunidade}</h3>
                                                     <p>Lorem ipsum dolor sit amet</p>
                                                 </div>
                                             </S.DropdownItem>
                                             <S.DropdownItem>
                                                 <Image src={GamificationIcon} alt='Ead Icon' />
                                                 <div>
-                                                    <h3>Gamificação</h3>
+                                                <h3>{headerInt.headerInt.submenu.gamificacao}</h3>
                                                     <p>Lorem ipsum dolor sit amet</p>
                                                 </div>
                                             </S.DropdownItem>
                                             <S.DropdownItem>
                                                 <Image src={AppIcon} alt='Ead Icon' />
                                                 <div>
-                                                    <h3>Aplicativo mobile</h3>
+                                                <h3>{headerInt.headerInt.submenu.aplicativo}</h3>
                                                     <p>Lorem ipsum dolor sit amet</p>
                                                 </div>
                                             </S.DropdownItem>
@@ -92,10 +97,10 @@ const Header: React.FC = () => {
                                     </S.DropdownContent>
                                 )}
                             </S.NavItem>
-                            <S.NavItem>Preços</S.NavItem>
-                            <S.NavItem>Academy</S.NavItem>
-                            <S.NavItem>Blog</S.NavItem>
-                            <S.NavItem>Contato</S.NavItem>
+                            <S.NavItem>{headerInt.headerInt.navbar.preco}</S.NavItem>
+                            <S.NavItem>{headerInt.headerInt.navbar.academy}</S.NavItem>
+                            <S.NavItem>{headerInt.headerInt.navbar.contato}</S.NavItem>
+                            <S.NavItem>{headerInt.headerInt.navbar.preco}</S.NavItem>
                         </S.NavList>
                     </nav>
 
@@ -103,6 +108,7 @@ const Header: React.FC = () => {
                         width="2px"
                         height="1.5rem"
                         backgroundColor="hsla(181, 82%, 78%, .25)"
+                        className='header__separator'
                     />
 
                     <S.HeaderButtons>
@@ -111,9 +117,9 @@ const Header: React.FC = () => {
                                 src={PersonIcon}
                                 alt="Person Icon"
                             />
-                            Entrar
+                           {headerInt.headerInt.navbar.entrar}
                         </Button>
-                        <OutlineButton>Começar agora</OutlineButton>
+                        <OutlineButton>{headerInt.headerInt.navbar.comecar}</OutlineButton>
                         <Button onClick={toggleLanguageMenu}>
                             PT
                             <Image

@@ -4,14 +4,16 @@ interface SeparatorProps {
     width: string;
     height: string;
     backgroundColor: string;
+    className?: string;
 }
 
-const Separator = ({ width, height, backgroundColor }: SeparatorProps) => {
+const Separator = ({ width, height, backgroundColor, className }: SeparatorProps) => {
     return (
         <S.Separator
             width={width}
             height={height}
             backgroundColor={backgroundColor}
+            className={className}
         />
     );
 }

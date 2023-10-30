@@ -1,0 +1,42 @@
+{
+    "header": {
+      "navbar": {
+        "solucoes": "Soluções",
+        "preco": "Preço",
+        "academy": "Academy",
+        "blog": "Blog",
+        "contato": "Contato",
+        "entrar": "Entrar",
+        "comecar": "Começar agora"
+      },
+      "submenu": {
+        "titulo": "Soluções Principais",
+        "escola": "Crie uma Escola Online",
+        "comunidade": "Comunidade e rede social",
+        "gamificacao": "Gamificação",
+        "aplicativo": "Aplicativo mobile"
+      }
+    },
+    "hero": {
+      "intro": "Plataforma all in one",
+      "titulo": "Sua escola online poderosa e lucrativa",
+      "subtitulo": "Tenha sua própria escola online 100% white label com rede social, gamificação, clube de assinaturas, ecommerce e sistema EAD completo.",
+      "comecar": "Começar agora",
+      "video": "Ver vídeo"
+    },
+    "features": {
+      "detalhes": "Pensamos em cada detalhe",
+      "recursos": "Conheça alguns dos nossos recursos",
+      "titulo": "Queremos que o aluno se sinta confortavel enquanto aprende",
+      "cards": {
+        "trilhas": "Trilhas de etapas",
+        "trilhasContent": "Crie planos de estudos especificando aulas e/ou cursos e definindo a ordem que seus alunos devem estudar.",
+        "playlists": "Playlists",
+        "playlistsContent": "Transforme uma coleção em uma playlist para poder ver vídeos e áudios em sequência offline.",
+        "colecoes": "Coleções",
+        "colecoesContent": "Crie coleções, adicione conteúdos, reorganize ítens e deixe tudo do seu jeito para melhorar a experiência."
+      },
+      "maisRecursos": "Veja todos os outros recursos disponíveis para te ajudar ",
+      "mais": "Ver mais"
+    }
+  }

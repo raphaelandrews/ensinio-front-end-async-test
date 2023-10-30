@@ -6,13 +6,20 @@ import Link from 'next/link';
 import * as S from "./styles";
 import { featuresImage } from '@/utils/format-image';
 import { FeaturesData } from '@/types/Features';
+import { FeaturesI18n } from '@/types/i18n';
 
 import RocketIcon from "@/public/assets/rocket-icon.svg";
 import ArrowRightIcon from "@/public/assets/arrow-right-icon.svg";
 
 import Separator from "@/components/separator/separator";
 
-const Features = ({ data }: FeaturesData) => {
+interface FeaturesProps {
+    featuresInt: FeaturesI18n;
+    data: FeaturesData;
+    lang: string;
+}
+
+const Features = ({ data, featuresInt, lang }: FeaturesProps) => {
     return (
         <S.FeaturesContainer>
             <S.FeaturesWrapper>
@@ -23,19 +30,17 @@ const Features = ({ data }: FeaturesData) => {
                             height="1px"
                             backgroundColor="hsla(252, 67%, 58%, .5)"
                         />
-                        <h3>Pensamos em cada detalhe</h3>
+                        <h3>{featuresInt.detalhes}</h3>
                     </div>
-                    <p>Conheça alguns dos nossos recursos  ⚡️</p>
+                    <p>{featuresInt.recursos}  ⚡️</p>
                 </S.FeatuesIntro>
-                <h2>
-                    Queremos que o aluno se sinta confortável enquanto aprende
-                </h2>
+                <h2>{featuresInt.titulo}</h2>
                 <S.FeaturesCards>
                     {data.map((item) => (
                         <S.FeaturesCard key={item.id}>
                             <Image src={featuresImage(item.id)} alt='Trails Icon' />
-                            <h4>{item.title.pt}</h4>
-                            <p>{item.description.pt}</p>
+                            <h4>{item.title[lang]}</h4>
+                            <p>{item.description[lang]}</p>
                         </S.FeaturesCard>
                     ))}
                 </S.FeaturesCards>
@@ -43,12 +48,10 @@ const Features = ({ data }: FeaturesData) => {
                 <S.FeaturesFooter>
                     <div className='features__footer___content'>
                         <Image src={RocketIcon} alt='Rocket Icon' />
-                        <p>
-                            Veja todos os outros recursos disponíveis para te ajudar
-                        </p>
+                        <p>{featuresInt.maisRecursos}</p>
                     </div>
                     <Link href='https://ndrws.dev' target='_blank'>
-                        Ver mais
+                        {featuresInt.mais}
                         <Image src={ArrowRightIcon} alt='Arrow Right Icon Icon' />
                     </Link>
                 </S.FeaturesFooter>

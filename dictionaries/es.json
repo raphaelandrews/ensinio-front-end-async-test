@@ -1,0 +1,42 @@
+{
+    "header": {
+      "navbar": {
+        "solucoes": "Soluciones",
+        "preco": "Precio",
+        "academy": "Academia",
+        "blog": "Blog",
+        "contato": "Contacto",
+        "entrar": "Iniciar sesión",
+        "comecar": "Comenzar ahora"
+      },
+      "submenu": {
+        "titulo": "Soluciones Clave",
+        "escola": "Crea una Escuela en Línea",
+        "comunidade": "Comunidad y Red Social",
+        "gamificacao": "Gamificación",
+        "aplicativo": "Aplicación Móvil"
+      }
+    },
+    "hero": {
+      "intro": "Plataforma Todo en Uno",
+      "titulo": "Tu Escuela en Línea Poderosa y Rentable",
+      "subtitulo": "Ten tu propia escuela en línea 100% white label con red social, gamificación, club de suscripciones, comercio electrónico y sistema de aprendizaje completo.",
+      "comecar": "Comenzar ahora",
+      "video": "Ver Video"
+    },
+    "features": {
+      "detalhes": "Nos Importa Cada Detalle",
+      "recursos": "Explora Algunas de Nuestras Características",
+      "titulo": "Queremos que el alumno se sienta cómodo mientras aprende",
+      "cards": {
+        "trilhas": "Senderos de Aprendizaje",
+        "trilhasContent": "Crea planes de estudio especificando lecciones y/o cursos y define el orden que tus estudiantes deben seguir.",
+        "playlists": "Listas de Reproducción",
+        "playlistsContent": "Convierte una colección en una lista de reproducción para ver videos y audios en secuencia sin conexión.",
+        "colecoes": "Colecciones",
+        "colecoesContent": "Crea colecciones, agrega contenido, reorganiza elementos y personaliza todo para mejorar la experiencia."
+      },
+      "maisRecursos": "Descubre todas las demás características disponibles para ayudarte ",
+      "mais": "Ver Más"
+    }
+  }

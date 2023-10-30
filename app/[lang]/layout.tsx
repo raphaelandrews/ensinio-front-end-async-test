@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
 import Providers from '@/app/providers';
-import GlobalStyles from '@/styles/global-styles';
+import { Locale, i18n } from '@/i18n.config';
 import { siteConfig } from "@/config/site";
 
 export const metadata: Metadata = {
@@ -31,13 +31,19 @@ export const metadata: Metadata = {
   },
 };
 
+export async function generateStaticParams() {
+  return i18n.locales.map(locale => ({ lang: locale }))
+}
+
 export default function RootLayout({
   children,
+  params
 }: {
   children: React.ReactNode
+  params: { lang: Locale }
 }) {
   return (
-    <html lang="en">
+    <html lang={params.lang}>
       <body>
         <Providers>
           {children}

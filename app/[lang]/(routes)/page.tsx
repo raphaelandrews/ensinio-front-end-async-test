@@ -1,7 +1,9 @@
 import type { Metadata } from 'next';
 
-import { siteConfig } from "@/config/site";
 import { getFeatureItem } from '@/actions/get-features-items';
+import { siteConfig } from "@/config/site";
+import { Locale, i18n } from '@/i18n.config';
+import { getDictionary } from '@/lib/dictionary';
 
 import Header from '@/components/header/header';
 import Hero from '@/components/hero/hero';
@@ -26,15 +28,22 @@ export const metadata: Metadata = {
     },
 }
 
-export default async function Home() {
+export default async function Home({ params }: { params: { lang: Locale } }) {
     const featuresData = await getFeatureItem();
+    const { header } = await getDictionary(params.lang);
+    const { hero } = await getDictionary(params.lang);
+    const { features } = await getDictionary(params.lang);
 
     return (
         <>
-            <Header />
+            <Header headerInt={header} />
             <main>
-                <Hero />
-                <Features data={featuresData} />
+                <Hero heroInt={hero} />
+                <Features
+                    lang={params.lang}
+                    featuresInt={features}
+                    data={featuresData}
+                />
             </main>
         </>
     )
