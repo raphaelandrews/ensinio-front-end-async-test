@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 
 import { siteConfig } from "@/config/site";
+import { getFeatureItem } from '@/actions/get-features-items';
 
 import Header from '@/components/header/header';
 import Hero from '@/components/hero/hero';
@@ -25,13 +26,15 @@ export const metadata: Metadata = {
     },
 }
 
-export default function Home() {
+export default async function Home() {
+    const featuresData = await getFeatureItem();
+
     return (
         <>
             <Header />
             <main>
                 <Hero />
-                <Features />
+                <Features data={featuresData} />
             </main>
         </>
     )

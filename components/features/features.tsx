@@ -1,19 +1,18 @@
 'use client'
 
 import Image from 'next/image';
+import Link from 'next/link';
 
 import * as S from "./styles";
+import { featuresImage } from '@/utils/format-image';
+import { FeaturesData } from '@/types/Features';
 
-import TrailsIcon from "@/public/assets/trail-icon.svg";
-import PlaylistsIcon from "@/public/assets/playlists-icon.svg";
-import FolderIcon from "@/public/assets/folder-icon.svg";
 import RocketIcon from "@/public/assets/rocket-icon.svg";
 import ArrowRightIcon from "@/public/assets/arrow-right-icon.svg";
 
 import Separator from "@/components/separator/separator";
-import Link from 'next/link';
 
-const Features = () => {
+const Features = ({ data }: FeaturesData) => {
     return (
         <S.FeaturesContainer>
             <S.FeaturesWrapper>
@@ -32,31 +31,13 @@ const Features = () => {
                     Queremos que o aluno se sinta confortável enquanto aprende
                 </h2>
                 <S.FeaturesCards>
-                    <S.FeaturesCard>
-                        <Image src={TrailsIcon} alt='Trails Icon' />
-                        <h4>Trilhas de etapas</h4>
-                        <p>
-                            Crie planos de estudos especificando aulas e/ou
-                            cursos e definindo a ordem que seus alunos devem
-                            estudar.
-                        </p>
-                    </S.FeaturesCard>
-                    <S.FeaturesCard>
-                        <Image src={PlaylistsIcon} alt='Playlists Icon' />
-                        <h4>Playlists</h4>
-                        <p>
-                            Transforme uma coleção em uma playlist para poder
-                            ver vídeos e áudios em sequência offline.
-                        </p>
-                    </S.FeaturesCard>
-                    <S.FeaturesCard>
-                        <Image src={FolderIcon} alt='Folder Icon' />
-                        <h4>Trilhas de etapas</h4>
-                        <p>
-                            Crie coleções, adicione conteúdos, reorganize ítens e
-                            deixe tudo do seu jeito para melhorar a experiência.
-                        </p>
-                    </S.FeaturesCard>
+                    {data.map((item) => (
+                        <S.FeaturesCard key={item.id}>
+                            <Image src={featuresImage(item.id)} alt='Trails Icon' />
+                            <h4>{item.title.pt}</h4>
+                            <p>{item.description.pt}</p>
+                        </S.FeaturesCard>
+                    ))}
                 </S.FeaturesCards>
                 <Separator width='100%' height='1px' backgroundColor='hsl(240, 4%, 91%)' />
                 <S.FeaturesFooter>
