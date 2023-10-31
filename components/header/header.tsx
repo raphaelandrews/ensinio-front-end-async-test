@@ -4,12 +4,17 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { AnimatePresence, motion, useAnimation } from 'framer-motion';
 
 import * as S from './styles';
 import { HeaderI18n } from '@/types/i18n';
 import useSolutionsStore from '@/hooks/use-solutions-menu';
 import useLanguageStore from '@/hooks/use-language-menu';
 import FormatLocaleFlag from '@/utils/format-locale-flag';
+
+import PingAnimate from '@/animations/ping-animate';
+import ZoomAnimate from '@/animations/zoom-animate';
+import FadeInAnimate from '@/animations/fadein-animate';
 
 import Logo from "@/public/assets/logo.svg";
 import ChevronsDown from "@/public/assets/chevrons-down.svg";
@@ -19,9 +24,6 @@ import Separator from '@/components/separator/separator';
 import LanguageMenu from './components/language-menu/language-menu';
 import { Button, OutlineButton } from '@/components/button/button';
 import SolutionsMenu from './components/solutions-menu/solutions-menu';
-import { AnimatePresence, animate, motion, useAnimation } from 'framer-motion';
-import PingAnimate from '@/animations/ping-animate';
-import ZoomAnimate from '@/animations/zoom-animate';
 
 interface HeaderProps {
     headerInt: HeaderI18n;
@@ -47,72 +49,75 @@ const Header = (headerInt: HeaderProps) => {
     return (
         <S.HeaderContainer>
             <S.HeaderWrapper>
-                <Link href="/">
-                    <Image
-                        src={Logo}
-                        alt="Ensinio Logo"
-                    />
-                </Link>
-
+                <FadeInAnimate initialX={-50} animateX={0} delay={1}>
+                    <Link href="/">
+                        <Image
+                            src={Logo}
+                            alt="Ensinio Logo"
+                        />
+                    </Link>
+                </FadeInAnimate>
                 <S.MenuContainer menuOpen={menuOpen}>
-                    <nav>
-                        <S.NavList>
-                            <S.NavItem
-                                onMouseEnter={() => setSolutionsOpen(true)}
-                                onClick={() => setSolutionsOpen(!solutionsOpen)}
-                            >
-                                <div className="solutions__menu">
-                                    {headerInt.headerInt.navbar.solucoes}
+                    <FadeInAnimate initialX={50} animateX={0} delay={1}>
+                        <nav>
+                            <S.NavList>
+                                <S.NavItem
+                                    onMouseEnter={() => setSolutionsOpen(true)}
+                                    onClick={() => setSolutionsOpen(!solutionsOpen)}
+                                >
+                                    <div className="solutions__menu">
+                                        {headerInt.headerInt.navbar.solucoes}
 
-                                    <motion.div
-                                        animate={{ rotate: rotateSolutions }}
-                                        transition={{ duration: 0.4 }}
-                                    >
-                                        <Image
-                                            src={ChevronsDown}
-                                            alt="Chevrons Down"
-                                        />
-                                    </motion.div>
-                                </div>
+                                        <motion.div
+                                            animate={{ rotate: rotateSolutions }}
+                                            transition={{ duration: 0.4 }}
+                                        >
+                                            <Image
+                                                src={ChevronsDown}
+                                                alt="Chevrons Down"
+                                            />
+                                        </motion.div>
+                                    </div>
 
-                                <AnimatePresence>
-                                    {solutionsOpen && (
-                                        <SolutionsMenu
-                                            headerInt={headerInt.headerInt}
-                                        />
-                                    )}
-                                </AnimatePresence>
-                            </S.NavItem>
-                            <S.NavItem>
-                                <PingAnimate>
-                                    <Link href='https://ndrws.dev' target='_blank'>
-                                        {headerInt.headerInt.navbar.preco}
-                                    </Link>
-                                </PingAnimate>
-                            </S.NavItem>
-                            <S.NavItem>
-                                <PingAnimate>
-                                    <Link href='https://ndrws.dev' target='_blank'>
-                                        {headerInt.headerInt.navbar.academy}
-                                    </Link>
-                                </PingAnimate>
-                            </S.NavItem>
-                            <S.NavItem>
-                                <PingAnimate>
-                                    <Link href='https://ndrws.dev' target='_blank'>
-                                        {headerInt.headerInt.navbar.blog}
-                                    </Link>
-                                </PingAnimate>
-                            </S.NavItem>
-                            <S.NavItem>
-                                <PingAnimate>
-                                    <Link href='https://ndrws.dev' target='_blank'>
-                                        {headerInt.headerInt.navbar.contato}
-                                    </Link>
-                                </PingAnimate>
-                            </S.NavItem>
-                        </S.NavList>
-                    </nav>
+                                    <AnimatePresence>
+                                        {solutionsOpen && (
+                                            <SolutionsMenu
+                                                headerInt={headerInt.headerInt}
+                                            />
+                                        )}
+                                    </AnimatePresence>
+                                </S.NavItem>
+                                <S.NavItem>
+                                    <PingAnimate>
+                                        <Link href='https://ndrws.dev' target='_blank'>
+                                            {headerInt.headerInt.navbar.preco}
+                                        </Link>
+                                    </PingAnimate>
+                                </S.NavItem>
+                                <S.NavItem>
+                                    <PingAnimate>
+                                        <Link href='https://ndrws.dev' target='_blank'>
+                                            {headerInt.headerInt.navbar.academy}
+                                        </Link>
+                                    </PingAnimate>
+                                </S.NavItem>
+                                <S.NavItem>
+                                    <PingAnimate>
+                                        <Link href='https://ndrws.dev' target='_blank'>
+                                            {headerInt.headerInt.navbar.blog}
+                                        </Link>
+                                    </PingAnimate>
+                                </S.NavItem>
+                                <S.NavItem>
+                                    <PingAnimate>
+                                        <Link href='https://ndrws.dev' target='_blank'>
+                                            {headerInt.headerInt.navbar.contato}
+                                        </Link>
+                                    </PingAnimate>
+                                </S.NavItem>
+                            </S.NavList>
+                        </nav>
+                    </FadeInAnimate>
 
                     <Separator
                         width="2px"
@@ -121,42 +126,44 @@ const Header = (headerInt: HeaderProps) => {
                         className='header__separator'
                     />
 
-                    <S.HeaderButtons>
-                        <ZoomAnimate>
-                            <Button>
-                                <Image
-                                    src={PersonIcon}
-                                    alt="Person Icon"
-                                />
-                                {headerInt.headerInt.navbar.entrar}
+                    <FadeInAnimate initialX={-50} animateX={0} delay={2}>
+                        <S.HeaderButtons>
+                            <ZoomAnimate>
+                                <Button>
+                                    <Image
+                                        src={PersonIcon}
+                                        alt="Person Icon"
+                                    />
+                                    {headerInt.headerInt.navbar.entrar}
+                                </Button>
+                            </ZoomAnimate>
+                            <ZoomAnimate>
+                                <OutlineButton>
+                                    {headerInt.headerInt.navbar.comecar}
+                                </OutlineButton>
+                            </ZoomAnimate>
+                            <Button
+                                onMouseEnter={() => setLanguageOpen(true)}
+                                onClick={() => setLanguageOpen(!languageOpen)}>
+                                {FormatLocaleFlag(activeLocale)}
+                                {activeLocale.toUpperCase()}
+                                <motion.div
+                                    animate={{ rotate: rotateLanguage }}
+                                    transition={{ duration: 0.4 }}
+                                >
+                                    <Image
+                                        src={ChevronsDown}
+                                        alt="Chevrons Down"
+                                    />
+                                </motion.div>
+                                <AnimatePresence>
+                                    {languageOpen && (
+                                        <LanguageMenu />
+                                    )}
+                                </AnimatePresence>
                             </Button>
-                        </ZoomAnimate>
-                        <ZoomAnimate>
-                            <OutlineButton>
-                                {headerInt.headerInt.navbar.comecar}
-                            </OutlineButton>
-                        </ZoomAnimate>
-                        <Button
-                            onMouseEnter={() => setLanguageOpen(true)}
-                            onClick={() => setLanguageOpen(!languageOpen)}>
-                            {FormatLocaleFlag(activeLocale)}
-                            {activeLocale.toUpperCase()}
-                            <motion.div
-                                animate={{ rotate: rotateLanguage }}
-                                transition={{ duration: 0.4 }}
-                            >
-                                <Image
-                                    src={ChevronsDown}
-                                    alt="Chevrons Down"
-                                />
-                            </motion.div>
-                            <AnimatePresence>
-                                {languageOpen && (
-                                    <LanguageMenu />
-                                )}
-                            </AnimatePresence>
-                        </Button>
-                    </S.HeaderButtons>
+                        </S.HeaderButtons>
+                    </FadeInAnimate>
                 </S.MenuContainer>
 
                 <S.HamburgerMenu onClick={toggleMenu}>
@@ -165,6 +172,7 @@ const Header = (headerInt: HeaderProps) => {
                     <div />
                 </S.HamburgerMenu>
             </S.HeaderWrapper>
+
         </S.HeaderContainer >
     );
 };

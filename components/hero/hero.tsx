@@ -11,6 +11,7 @@ import DevicesIcon from "@/public/assets/devices-icon.svg";
 
 import { Button } from "@/components/button/button";
 import ZoomAnimate from "@/animations/zoom-animate";
+import FadeInAnimate from "@/animations/fadein-animate";
 
 interface HeroProps {
     heroInt: HeroI18n;
@@ -20,7 +21,7 @@ const Hero = (heroInt: HeroProps) => {
     return (
         <S.HeroContainer>
             <S.HeroWrapper>
-                <div className="hero__content">
+                <FadeInAnimate initialX={-50} animateX={0} className="hero__content">
                     <span>
                         <Image src={DevicesIcon} alt="Devices icon" />
                         <span>{heroInt.heroInt.intro}</span>
@@ -40,10 +41,10 @@ const Hero = (heroInt: HeroProps) => {
                             </Button>
                         </ZoomAnimate>
                     </div>
-                </div>
-                <div className="hero__image">
+                </FadeInAnimate>
+                <FadeInAnimate initialX={50} animateX={0} className="hero__image">
                     <Image src={Man} alt="Hero image" />
-                </div>
+                </FadeInAnimate>
             </S.HeroWrapper>
 
         </S.HeroContainer>

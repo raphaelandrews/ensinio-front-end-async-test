@@ -17,7 +17,7 @@ export const HeaderWrapper = styled.header`
     color: ${({ theme }) => theme.colors.background};
     width: 90%;
     max-width: 1280px;
-    padding: 1.5rem;
+    padding: 1.5rem 0;
     margin: 0 auto;
 `
 
