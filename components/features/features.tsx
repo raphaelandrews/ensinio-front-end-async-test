@@ -46,6 +46,10 @@ const animationVariants: AnimationVariants = {
 };
 
 const Features = ({ data, featuresInt, lang }: FeaturesProps) => {
+    if (!Array.isArray(data)) {
+        return null;
+    }
+    
     return (
         <S.FeaturesContainer>
             <S.FeaturesWrapper>

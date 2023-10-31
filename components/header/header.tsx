@@ -136,9 +136,11 @@ const Header = (headerInt: HeaderProps) => {
                                     alt="Chevrons Down"
                                 />
                             </motion.div>
-                            {languageOpen && (
-                                <LanguageMenu />
-                            )}
+                            <AnimatePresence>
+                                {languageOpen && (
+                                    <LanguageMenu />
+                                )}
+                            </AnimatePresence>
                         </Button>
                     </S.HeaderButtons>
                 </S.MenuContainer>
