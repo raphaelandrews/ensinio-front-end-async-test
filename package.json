@@ -13,6 +13,7 @@
     "@formatjs/intl-localematcher": "^0.4.2",
     "@types/negotiator": "^0.6.2",
     "axios": "^1.6.0",
+    "framer-motion": "^10.16.4",
     "i18n": "^0.15.1",
     "json-server": "^0.17.4",
     "negotiator": "^0.6.3",

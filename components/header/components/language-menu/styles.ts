@@ -20,6 +20,7 @@ export const LanguageMenuList = styled.ul`
     border-radius: .5rem;
     background-color: ${({ theme }) => theme.colors.background};
 
+    .active,
     :hover {
         background: linear-gradient(90deg, hsl(252, 67%, 55%) -880.48%, hsla(252, 67%, 55%, 0) 100%);
     }

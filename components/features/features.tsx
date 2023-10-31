@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
+import { Variants, motion } from "framer-motion";
 
 import * as S from "./styles";
 import { featuresImage } from '@/utils/format-image';
@@ -18,6 +19,31 @@ interface FeaturesProps {
     data: FeaturesData;
     lang: string;
 }
+
+interface AnimationVariants extends Variants {
+    hover: {
+        x: number;
+        transition: {
+            duration: number;
+            repeat: number;
+            repeatType: 'reverse' | 'loop' | 'mirror';
+        };
+    };
+}
+
+const animationVariants: AnimationVariants = {
+    initial: {
+        x: 0,
+    },
+    hover: {
+        x: 10,
+        transition: {
+            duration: 0.5,
+            repeat: Infinity,
+            repeatType: 'reverse',
+        },
+    },
+};
 
 const Features = ({ data, featuresInt, lang }: FeaturesProps) => {
     return (
@@ -50,10 +76,14 @@ const Features = ({ data, featuresInt, lang }: FeaturesProps) => {
                         <Image src={RocketIcon} alt='Rocket Icon' />
                         <p>{featuresInt.maisRecursos}</p>
                     </div>
-                    <Link href='https://ndrws.dev' target='_blank'>
-                        {featuresInt.mais}
-                        <Image src={ArrowRightIcon} alt='Arrow Right Icon Icon' />
-                    </Link>
+                    <motion.div whileHover="hover">
+                        <Link href='https://ndrws.dev' target='_blank'>
+                            {featuresInt.mais}
+                            <motion.div variants={animationVariants}>
+                                <Image src={ArrowRightIcon} alt="Arrow Right Icon" />
+                            </motion.div>
+                        </Link>
+                    </motion.div>
                 </S.FeaturesFooter>
             </S.FeaturesWrapper>
         </S.FeaturesContainer>

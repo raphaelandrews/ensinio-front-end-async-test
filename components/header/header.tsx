@@ -9,6 +9,7 @@ import * as S from './styles';
 import { HeaderI18n } from '@/types/i18n';
 import useSolutionsStore from '@/hooks/use-solutions-menu';
 import useLanguageStore from '@/hooks/use-language-menu';
+import FormatLocaleFlag from '@/utils/format-locale-flag';
 
 import Logo from "@/public/assets/logo.svg";
 import ChevronsDown from "@/public/assets/chevrons-down.svg";
@@ -18,6 +19,7 @@ import Separator from '@/components/separator/separator';
 import LanguageMenu from './components/language-menu/language-menu';
 import { Button, OutlineButton } from '@/components/button/button';
 import SolutionsMenu from './components/solutions-menu/solutions-menu';
+import { AnimatePresence, motion, useAnimation } from 'framer-motion';
 
 interface HeaderProps {
     headerInt: HeaderI18n;
@@ -26,14 +28,18 @@ interface HeaderProps {
 const Header = (headerInt: HeaderProps) => {
     const { solutionsOpen, setSolutionsOpen } = useSolutionsStore();
     const { languageOpen, setLanguageOpen } = useLanguageStore();
-    const [languageVisible, setLanguageVisible] = useState(true);
-    const [menuVisible, setMenuVisible] = useState<boolean>(false);
+    const [menuOpen, setMenuOpen] = useState<boolean>(false);
     const pathName = usePathname();
+    const controls = useAnimation();
 
     const activeLocale = pathName.substring(1);
 
+    const rotateSolutions = solutionsOpen ? 180 : 0;
+    const rotateLanguage = languageOpen ? 180 : 0;
+
     const toggleMenu = () => {
-        setMenuVisible(!menuVisible);
+        controls.start({ opacity: 0, x: 100 });
+        setMenuOpen(!menuOpen);
     };
 
     return (
@@ -46,35 +52,54 @@ const Header = (headerInt: HeaderProps) => {
                     />
                 </Link>
 
-                <S.MenuContainer visible={menuVisible}>
+                <S.MenuContainer menuOpen={menuOpen}>
                     <nav>
                         <S.NavList>
                             <S.NavItem
                                 onMouseEnter={() => setSolutionsOpen(true)}
                                 onClick={() => setSolutionsOpen(!solutionsOpen)}
                             >
-                                {headerInt.headerInt.navbar.solucoes}
-                                <Image
-                                    src={ChevronsDown}
-                                    alt="Chevrons Down"
-                                />
-                                {solutionsOpen && (
-                                    <SolutionsMenu
-                                        headerInt={headerInt.headerInt}
-                                    />
-                                )}
+                                <div className="solutions__menu">
+                                    {headerInt.headerInt.navbar.solucoes}
+
+                                    <motion.div
+                                        animate={{ rotate: rotateSolutions }}
+                                        transition={{ duration: 0.4 }}
+                                    >
+                                        <Image
+                                            src={ChevronsDown}
+                                            alt="Chevrons Down"
+                                        />
+                                    </motion.div>
+                                </div>
+
+                                <AnimatePresence>
+                                    {solutionsOpen && (
+                                        <SolutionsMenu
+                                            headerInt={headerInt.headerInt}
+                                        />
+                                    )}
+                                </AnimatePresence>
                             </S.NavItem>
                             <S.NavItem>
-                                {headerInt.headerInt.navbar.preco}
+                                <Link href='https://ndrws.dev' target='_blank'>
+                                    {headerInt.headerInt.navbar.preco}
+                                </Link>
                             </S.NavItem>
                             <S.NavItem>
-                                {headerInt.headerInt.navbar.academy}
+                                <Link href='https://ndrws.dev' target='_blank'>
+                                    {headerInt.headerInt.navbar.academy}
+                                </Link>
                             </S.NavItem>
                             <S.NavItem>
-                                {headerInt.headerInt.navbar.blog}
+                                <Link href='https://ndrws.dev' target='_blank'>
+                                    {headerInt.headerInt.navbar.blog}
+                                </Link>
                             </S.NavItem>
                             <S.NavItem>
-                                {headerInt.headerInt.navbar.contato}
+                                <Link href='https://ndrws.dev' target='_blank'>
+                                    {headerInt.headerInt.navbar.contato}
+                                </Link>
                             </S.NavItem>
                         </S.NavList>
                     </nav>
@@ -100,11 +125,17 @@ const Header = (headerInt: HeaderProps) => {
                         <Button
                             onMouseEnter={() => setLanguageOpen(true)}
                             onClick={() => setLanguageOpen(!languageOpen)}>
+                            {FormatLocaleFlag(activeLocale)}
                             {activeLocale.toUpperCase()}
-                            <Image
-                                src={ChevronsDown}
-                                alt="Chevrons Down"
-                            />
+                            <motion.div
+                                animate={{ rotate: rotateLanguage }}
+                                transition={{ duration: 0.4 }}
+                            >
+                                <Image
+                                    src={ChevronsDown}
+                                    alt="Chevrons Down"
+                                />
+                            </motion.div>
                             {languageOpen && (
                                 <LanguageMenu />
                             )}

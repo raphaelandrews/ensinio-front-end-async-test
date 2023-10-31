@@ -1,6 +1,7 @@
 'use client'
 
 import Image from 'next/image';
+import { motion } from 'framer-motion';
 
 import * as S from './styles';
 import { HeaderI18n } from '@/types/i18n';
@@ -16,10 +17,17 @@ interface HeaderProps {
 }
 
 const SolutionsMenu = (headerInt: HeaderProps) => {
-    const { solutionsOpen, setSolutionsOpen } = useSolutionsStore();
+    const { setSolutionsOpen } = useSolutionsStore();
 
     return (
-        <S.SolutionsMenuContainer onMouseLeave={() => setSolutionsOpen(false)}>
+        <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.5 }}
+            style={{ position: 'absolute' }}
+        >
+            <S.SolutionsMenuContainer onMouseLeave={() => setSolutionsOpen(false)}>
                 <h2>{headerInt.headerInt.submenu.titulo}</h2>
                 <S.SolutionsMenuList>
                     <S.SolutionsMenuItem>
@@ -51,7 +59,8 @@ const SolutionsMenu = (headerInt: HeaderProps) => {
                         </div>
                     </S.SolutionsMenuItem>
                 </S.SolutionsMenuList>
-        </S.SolutionsMenuContainer>
+            </S.SolutionsMenuContainer>
+        </motion.div>
     );
 }
 

@@ -78,6 +78,7 @@ export const FeaturesCards = styled.div`
 
 export const FeaturesCard = styled.article`
     max-width: 280px;
+    cursor: pointer;
 
     h4 {
         font-family: ${({ theme }) => theme.fonts.secondary};

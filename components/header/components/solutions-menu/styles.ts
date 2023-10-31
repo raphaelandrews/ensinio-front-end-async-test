@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const SolutionsMenuContainer = styled.div`
     position: absolute;
-    top: 2rem;
+    top: 1rem;
     right: -50%;
     display: flex;
     flex-direction: column;
@@ -13,14 +13,18 @@ export const SolutionsMenuContainer = styled.div`
     border-radius: 6px;
     background-color: ${({ theme }) => theme.colors.background};
     transition: display 0.3s ease-in-out;
+    cursor: default;
     z-index: 5;
-        @media screen and (min-width: 600px) {
+
+    @media screen and (min-width: 600px) {
         padding: 2.75rem 3rem;
     }
-        @media screen and (min-width: 1200px) {
+
+    @media screen and (min-width: 1200px) {
         right: inherit;
         left: 0;
     }
+
     h2 {
         font-size: .875rem;
         font-weight: 600;
@@ -34,6 +38,7 @@ export const SolutionsMenuContainer = styled.div`
 export const SolutionsMenuList = styled.ul`
     display: grid;
     gap: 2.5rem;
+
     @media screen and (min-width: 1000px) {
         grid-template-columns: 1fr 1fr;
     }
@@ -43,6 +48,8 @@ export const SolutionsMenuItem = styled.li`
     display: grid;
     grid-template-rows: auto 1fr;
     gap: 1rem;
+    cursor: pointer;
+
     h3 {
         font-family: ${({ theme }) => theme.fonts.secondary};
         font-size: .9375rem;

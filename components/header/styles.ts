@@ -15,20 +15,21 @@ export const HeaderWrapper = styled.header`
     justify-content: space-between;
     align-items: center;
     color: ${({ theme }) => theme.colors.background};
+    width: 90%;
     max-width: 1280px;
     padding: 1.5rem;
     margin: 0 auto;
 `
 
 interface MenuContainerProps {
-    visible: boolean;
+    menuOpen: boolean;
 }
 
 export const MenuContainer = styled.div<MenuContainerProps>`
     position: absolute;
     top: 100%;
     right: 0;
-     //display: ${(props) => (props.visible ? 'flex' : 'none')};
+    display: ${(props) => (props.menuOpen ? 'flex' : 'none')};
     flex-direction: column;
     align-items: center;
     gap: 2.5rem;
@@ -53,17 +54,6 @@ export const MenuContainer = styled.div<MenuContainerProps>`
             display: block;
         }
     }
-`;
-
-export const NavItem = styled.li`
-  position: relative;
-  display: flex;
-  align-items: center;
-  gap: .75rem;
-  font-size: .9375rem;
-  font-weight: 500;
-  line-height: 105%;
-  cursor: pointer;
 `;
 
 export const HamburgerMenu = styled.div`
@@ -92,6 +82,23 @@ export const NavList = styled.ul`
     @media screen and (min-width: 1200px) {
         position: relative;
         flex-direction: row;
+    }
+`;
+
+export const NavItem = styled.li`
+    .solutions__menu:hover {
+        cursor: pointer;
+    }
+    a,
+    .solutions__menu  {
+        position: relative;
+        display: flex;
+        align-items: center;
+        gap: .75rem;
+        font-size: .9375rem;
+        font-weight: 500;
+        color: ${({ theme }) => theme.colors.background};
+        line-height: 105%;
     }
 `;
 
