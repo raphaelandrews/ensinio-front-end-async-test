@@ -58,6 +58,7 @@ input[type="submit"] {
 
   @media screen and (min-width: 1200px) {
     right: inherit;
+    left: 0;
   }
 }
 

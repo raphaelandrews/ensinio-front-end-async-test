@@ -26,7 +26,9 @@ const SolutionsMenu = (headerInt: HeaderProps) => {
     };
 
     return (
-        <ClickOutsideHandler onOutsideClick={handleOutsideClick} className='solutions__animate'>
+        <ClickOutsideHandler
+            onOutsideClick={handleOutsideClick}
+            className='solutions__animate'>
             <motion.div
                 initial={{ opacity: 0, scale: 0.5 }}
                 animate={{ opacity: 1, scale: 1 }}

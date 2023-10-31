@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const SolutionsMenuContainer = styled.div`
     position: absolute;
-    top: 1rem;
+    top: 2rem;
     right: 0;
     display: flex;
     flex-direction: column;

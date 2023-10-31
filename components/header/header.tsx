@@ -59,6 +59,13 @@ const Header = (headerInt: HeaderProps) => {
                 </FadeInAnimate>
                 <S.MenuContainer menuOpen={menuOpen}>
                     <FadeInAnimate initialX={50} animateX={0} delay={1}>
+                        <AnimatePresence>
+                            {solutionsOpen && (
+                                <SolutionsMenu
+                                    headerInt={headerInt.headerInt}
+                                />
+                            )}
+                        </AnimatePresence>
                         <nav>
                             <S.NavList>
                                 <S.NavItem
@@ -78,14 +85,6 @@ const Header = (headerInt: HeaderProps) => {
                                             />
                                         </motion.div>
                                     </div>
-
-                                    <AnimatePresence>
-                                        {solutionsOpen && (
-                                            <SolutionsMenu
-                                                headerInt={headerInt.headerInt}
-                                            />
-                                        )}
-                                    </AnimatePresence>
                                 </S.NavItem>
                                 <S.NavItem>
                                     <PingAnimate>
@@ -118,6 +117,7 @@ const Header = (headerInt: HeaderProps) => {
                             </S.NavList>
                         </nav>
                     </FadeInAnimate>
+
 
                     <Separator
                         width="2px"
@@ -174,7 +174,6 @@ const Header = (headerInt: HeaderProps) => {
                     </S.HamburgerMenu>
                 </FadeInAnimate>
             </S.HeaderWrapper>
-
         </S.HeaderContainer >
     );
 };
