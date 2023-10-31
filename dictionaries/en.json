@@ -1,0 +1,42 @@
+{
+    "header": {
+      "navbar": {
+        "solucoes": "Solutions",
+        "preco": "Pricing",
+        "academy": "Academy",
+        "blog": "Blog",
+        "contato": "Contact",
+        "entrar": "Sign In",
+        "comecar": "Get Started Now"
+      },
+      "submenu": {
+        "titulo": "Key Solutions",
+        "escola": "Create an Online School",
+        "comunidade": "Community and Social Network",
+        "gamificacao": "Gamification",
+        "aplicativo": "Mobile App"
+      }
+    },
+    "hero": {
+      "intro": "All in One Platform",
+      "titulo": "Your Powerful and Profitable Online School",
+      "subtitulo": "Have your own 100% white label online school with social network, gamification, subscription club, e-commerce, and complete E-learning system.",
+      "comecar": "Get Started Now",
+      "video": "Watch Video"
+    },
+    "features": {
+      "detalhes": "We Care About Every Detail",
+      "recursos": "Explore Some of Our Features",
+      "titulo": "We want the student to feel comfortable while learning",
+      "cards": {
+        "trilhas": "Learning Paths",
+        "trilhasContent": "Create study plans specifying lessons and/or courses and defining the order your students should follow.",
+        "playlists": "Playlists",
+        "playlistsContent": "Turn a collection into a playlist to watch videos and audios sequentially offline.",
+        "colecoes": "Collections",
+        "colecoesContent": "Create collections, add content, rearrange items, and customize everything to enhance the experience."
+      },
+      "maisRecursos": "See all the other features available to assist you ",
+      "mais": "See More"
+    }
+  }
