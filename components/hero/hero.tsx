@@ -42,9 +42,9 @@ const Hero = (heroInt: HeroProps) => {
                         </ZoomAnimate>
                     </div>
                 </FadeInAnimate>
-                <FadeInAnimate initialX={50} animateX={0} className="hero__image">
+                <div className="hero__image">
                     <Image src={Man} alt="Hero image" />
-                </FadeInAnimate>
+                </div>
             </S.HeroWrapper>
 
         </S.HeroContainer>

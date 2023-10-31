@@ -166,11 +166,13 @@ const Header = (headerInt: HeaderProps) => {
                     </FadeInAnimate>
                 </S.MenuContainer>
 
-                <S.HamburgerMenu onClick={toggleMenu}>
-                    <div />
-                    <div />
-                    <div />
-                </S.HamburgerMenu>
+                <FadeInAnimate initialX={50} animateX={0} delay={1}>
+                    <S.HamburgerMenu onClick={toggleMenu}>
+                        <div />
+                        <div />
+                        <div />
+                    </S.HamburgerMenu>
+                </FadeInAnimate>
             </S.HeaderWrapper>
 
         </S.HeaderContainer >

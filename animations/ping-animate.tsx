@@ -17,7 +17,7 @@ const animationVariants: AnimationVariants = {
         y: 0,
     },
     hover: {
-        y: 3,
+        y: 4,
         transition: {
             duration: 0.3,
             repeat: 1,

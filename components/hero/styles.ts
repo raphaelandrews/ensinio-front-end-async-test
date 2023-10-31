@@ -110,6 +110,6 @@ export const HeroWrapper = styled.div`
     }
     
     @media screen and (min-width: 1200px) {
-        height: 44rem;
+        height: 40rem;
     }
 `
