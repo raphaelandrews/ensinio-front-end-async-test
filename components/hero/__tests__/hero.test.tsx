@@ -1,5 +1,5 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import Hero from '../hero';
 import Providers from '@/app/providers';
 
@@ -11,10 +11,18 @@ const mockHeroInt = {
     "video": "Ver vídeo"
 }
 
-test('renders Hero component with mock data', () => {
-    render(
-        <Providers>
-            <Hero heroInt={mockHeroInt} />
-        </Providers>
-    );
+describe('Hero', () => {
+    it('renders Hero component with mock data', () => {
+        render(
+            <Providers>
+                <Hero heroInt={mockHeroInt} />
+            </Providers>
+        );
+
+        const intro = screen.getByText("Plataforma all in one");
+        const heroImage = screen.getByAltText("Hero image");
+
+        expect(intro)
+        expect(heroImage)
+    });
 });

@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 
-import { getFeatureItem } from '@/actions/get-features-items';
+import { getFeatureItem } from '@/actions/get-feautres-items/get-features-items';
 import { siteConfig } from "@/config/site";
 import { Locale, i18n } from '@/i18n.config';
 import { getDictionary } from '@/lib/dictionary';
