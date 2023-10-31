@@ -13,6 +13,7 @@ import RocketIcon from "@/public/assets/rocket-icon.svg";
 import ArrowRightIcon from "@/public/assets/arrow-right-icon.svg";
 
 import Separator from "@/components/separator/separator";
+import PingAnimate from '@/animations/ping-animate';
 
 interface FeaturesProps {
     featuresInt: FeaturesI18n;
@@ -49,7 +50,7 @@ const Features = ({ data, featuresInt, lang }: FeaturesProps) => {
     if (!Array.isArray(data)) {
         return null;
     }
-    
+
     return (
         <S.FeaturesContainer>
             <S.FeaturesWrapper>
@@ -67,11 +68,13 @@ const Features = ({ data, featuresInt, lang }: FeaturesProps) => {
                 <h2>{featuresInt.titulo}</h2>
                 <S.FeaturesCards>
                     {data.map((item) => (
-                        <S.FeaturesCard key={item.id}>
-                            <Image src={featuresImage(item.id)} alt='Trails Icon' />
-                            <h2>{item.title[lang]}</h2>
-                            <p>{item.description[lang]}</p>
-                        </S.FeaturesCard>
+                        <PingAnimate key={item.id}>
+                            <S.FeaturesCard >
+                                <Image src={featuresImage(item.id)} alt='Trails Icon' />
+                                <h2>{item.title[lang]}</h2>
+                                <p>{item.description[lang]}</p>
+                            </S.FeaturesCard>
+                        </PingAnimate>
                     ))}
                 </S.FeaturesCards>
                 <Separator width='100%' height='1px' backgroundColor='hsl(240, 4%, 91%)' />
@@ -83,7 +86,7 @@ const Features = ({ data, featuresInt, lang }: FeaturesProps) => {
                     <motion.div whileHover="hover">
                         <Link href='https://ndrws.dev' target='_blank'>
                             {featuresInt.mais}
-                            <motion.div variants={animationVariants}>
+                            <motion.div variants={animationVariants} className='features__footer___image'>
                                 <Image src={ArrowRightIcon} alt="Arrow Right Icon" />
                             </motion.div>
                         </Link>

@@ -26,7 +26,7 @@ const animationVariants: AnimationVariants = {
     },
 };
 
-const TransformAnimate = ({ children }: { children: ReactNode }) => {
+const PingAnimate = ({ children }: { children: ReactNode }) => {
     return (
         <motion.div
             whileHover="hover"
@@ -37,4 +37,4 @@ const TransformAnimate = ({ children }: { children: ReactNode }) => {
     );
 };
 
-export default TransformAnimate;
+export default PingAnimate;

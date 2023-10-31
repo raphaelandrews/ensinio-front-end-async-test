@@ -21,11 +21,14 @@ const LanguageMenu = () => {
 
     return (
         <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.5 }}
-            style={{ position: 'absolute' }}
+            initial={{ opacity: 0, scale: 0.5 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.2 }} 
+            transition={{
+                duration: 0.8,
+                ease: [0, 0.71, 0.2, 1.01]
+            }}
+            className="language__animate"
         >
             <S.LanguageMenuContainer onMouseLeave={() => setLanguageOpen(false)}>
                 <S.LanguageMenuList>

@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const LanguageMenuContainer = styled.div`
     position: absolute;
-    top: 2rem;
+    top: 1.5rem;
     right: -50%;
     text-align: left;
     transition: display 0.3s ease-in-out;
@@ -10,7 +10,6 @@ export const LanguageMenuContainer = styled.div`
 
     @media (min-width: 1200px) {
         right: inherit;
-        left: 0;
     }
 `
 

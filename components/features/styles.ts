@@ -80,7 +80,7 @@ export const FeaturesCard = styled.article`
     max-width: 280px;
     cursor: pointer;
 
-    h4 {
+    h2 {
         font-family: ${({ theme }) => theme.fonts.secondary};
         font-size: 1.25rem;
         font-weight: 600;
@@ -119,6 +119,10 @@ export const FeaturesFooter = styled.div`
         font-weight: 500;
         color: ${({ theme }) => theme.colors.muted};
         line-height: 150%;
+    }
+
+    .features__footer___image {
+        display: flex;
     }
 
     @media screen and (min-width: 800px) {

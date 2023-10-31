@@ -20,7 +20,8 @@ import LanguageMenu from './components/language-menu/language-menu';
 import { Button, OutlineButton } from '@/components/button/button';
 import SolutionsMenu from './components/solutions-menu/solutions-menu';
 import { AnimatePresence, animate, motion, useAnimation } from 'framer-motion';
-import TransformAnimate from '@/animations/transform-animate';
+import PingAnimate from '@/animations/ping-animate';
+import ZoomAnimate from '@/animations/zoom-animate';
 
 interface HeaderProps {
     headerInt: HeaderI18n;
@@ -83,32 +84,32 @@ const Header = (headerInt: HeaderProps) => {
                                 </AnimatePresence>
                             </S.NavItem>
                             <S.NavItem>
-                                <TransformAnimate>
+                                <PingAnimate>
                                     <Link href='https://ndrws.dev' target='_blank'>
                                         {headerInt.headerInt.navbar.preco}
                                     </Link>
-                                </TransformAnimate>
+                                </PingAnimate>
                             </S.NavItem>
                             <S.NavItem>
-                                <TransformAnimate>
+                                <PingAnimate>
                                     <Link href='https://ndrws.dev' target='_blank'>
                                         {headerInt.headerInt.navbar.academy}
                                     </Link>
-                                </TransformAnimate>
+                                </PingAnimate>
                             </S.NavItem>
                             <S.NavItem>
-                                <TransformAnimate>
+                                <PingAnimate>
                                     <Link href='https://ndrws.dev' target='_blank'>
                                         {headerInt.headerInt.navbar.blog}
                                     </Link>
-                                </TransformAnimate>
+                                </PingAnimate>
                             </S.NavItem>
                             <S.NavItem>
-                                <TransformAnimate>
+                                <PingAnimate>
                                     <Link href='https://ndrws.dev' target='_blank'>
                                         {headerInt.headerInt.navbar.contato}
                                     </Link>
-                                </TransformAnimate>
+                                </PingAnimate>
                             </S.NavItem>
                         </S.NavList>
                     </nav>
@@ -121,16 +122,20 @@ const Header = (headerInt: HeaderProps) => {
                     />
 
                     <S.HeaderButtons>
-                        <Button>
-                            <Image
-                                src={PersonIcon}
-                                alt="Person Icon"
-                            />
-                            {headerInt.headerInt.navbar.entrar}
-                        </Button>
-                        <OutlineButton>
-                            {headerInt.headerInt.navbar.comecar}
-                        </OutlineButton>
+                        <ZoomAnimate>
+                            <Button>
+                                <Image
+                                    src={PersonIcon}
+                                    alt="Person Icon"
+                                />
+                                {headerInt.headerInt.navbar.entrar}
+                            </Button>
+                        </ZoomAnimate>
+                        <ZoomAnimate>
+                            <OutlineButton>
+                                {headerInt.headerInt.navbar.comecar}
+                            </OutlineButton>
+                        </ZoomAnimate>
                         <Button
                             onMouseEnter={() => setLanguageOpen(true)}
                             onClick={() => setLanguageOpen(!languageOpen)}>
@@ -160,7 +165,7 @@ const Header = (headerInt: HeaderProps) => {
                     <div />
                 </S.HamburgerMenu>
             </S.HeaderWrapper>
-        </S.HeaderContainer>
+        </S.HeaderContainer >
     );
 };
 
