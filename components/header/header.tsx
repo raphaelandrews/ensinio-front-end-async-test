@@ -19,7 +19,8 @@ import Separator from '@/components/separator/separator';
 import LanguageMenu from './components/language-menu/language-menu';
 import { Button, OutlineButton } from '@/components/button/button';
 import SolutionsMenu from './components/solutions-menu/solutions-menu';
-import { AnimatePresence, motion, useAnimation } from 'framer-motion';
+import { AnimatePresence, animate, motion, useAnimation } from 'framer-motion';
+import TransformAnimate from '@/animations/transform-animate';
 
 interface HeaderProps {
     headerInt: HeaderI18n;
@@ -82,24 +83,32 @@ const Header = (headerInt: HeaderProps) => {
                                 </AnimatePresence>
                             </S.NavItem>
                             <S.NavItem>
-                                <Link href='https://ndrws.dev' target='_blank'>
-                                    {headerInt.headerInt.navbar.preco}
-                                </Link>
+                                <TransformAnimate>
+                                    <Link href='https://ndrws.dev' target='_blank'>
+                                        {headerInt.headerInt.navbar.preco}
+                                    </Link>
+                                </TransformAnimate>
                             </S.NavItem>
                             <S.NavItem>
-                                <Link href='https://ndrws.dev' target='_blank'>
-                                    {headerInt.headerInt.navbar.academy}
-                                </Link>
+                                <TransformAnimate>
+                                    <Link href='https://ndrws.dev' target='_blank'>
+                                        {headerInt.headerInt.navbar.academy}
+                                    </Link>
+                                </TransformAnimate>
                             </S.NavItem>
                             <S.NavItem>
-                                <Link href='https://ndrws.dev' target='_blank'>
-                                    {headerInt.headerInt.navbar.blog}
-                                </Link>
+                                <TransformAnimate>
+                                    <Link href='https://ndrws.dev' target='_blank'>
+                                        {headerInt.headerInt.navbar.blog}
+                                    </Link>
+                                </TransformAnimate>
                             </S.NavItem>
                             <S.NavItem>
-                                <Link href='https://ndrws.dev' target='_blank'>
-                                    {headerInt.headerInt.navbar.contato}
-                                </Link>
+                                <TransformAnimate>
+                                    <Link href='https://ndrws.dev' target='_blank'>
+                                        {headerInt.headerInt.navbar.contato}
+                                    </Link>
+                                </TransformAnimate>
                             </S.NavItem>
                         </S.NavList>
                     </nav>

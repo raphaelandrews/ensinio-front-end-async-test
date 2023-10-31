@@ -69,7 +69,7 @@ const Features = ({ data, featuresInt, lang }: FeaturesProps) => {
                     {data.map((item) => (
                         <S.FeaturesCard key={item.id}>
                             <Image src={featuresImage(item.id)} alt='Trails Icon' />
-                            <h4>{item.title[lang]}</h4>
+                            <h2>{item.title[lang]}</h2>
                             <p>{item.description[lang]}</p>
                         </S.FeaturesCard>
                     ))}
