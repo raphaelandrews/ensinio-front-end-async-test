@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 
-import * as S from "./styles";
+import * as S from "./hero.styles";
 import { HeroI18n } from "@/types/i18n";
 
 import Man from "@/public/assets/man.png";
@@ -11,8 +11,8 @@ import DevicesIcon from "@/public/assets/devices-icon.svg";
 import FadeInAnimate from "@/animations/fadein-animate";
 import ZoomAnimate from "@/animations/zoom-animate";
 
-import { Button } from "@/components/button/button";
-import Container from '@/components/container/container';
+import { Button } from "@/components/ui/button/button";
+import Container from '@/components/ui/container/container';
 import HeroIcons from "@/components/hero-icons/hero-icons";
 
 interface HeroProps {

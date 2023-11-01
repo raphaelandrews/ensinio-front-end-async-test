@@ -7,7 +7,7 @@ export const HeaderContainer = styled.header`
     max-width: 100dvw;
     background-color: var(--header-background);
     backdrop-filter: blur(15px);
-    z-index: 1;
+    z-index: var(--z-tn);
 `;
 
 export const HeaderWrapper = styled.div`

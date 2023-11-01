@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 
-import * as S from './styles';
+import * as S from './solutions-menu.styles';
 import { HeaderI18n } from '@/types/i18n';
 import useSolutionsStore from '@/hooks/use-solutions-menu';
 import ClickOutsideHandler from '@/hooks/use-click-outside';

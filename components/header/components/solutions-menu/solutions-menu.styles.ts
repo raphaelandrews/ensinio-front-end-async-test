@@ -15,7 +15,7 @@ export const SolutionsMenuContainer = styled.div`
     box-shadow: var(--shadow-base);
     transition: display 0.3s ease-in-out;
     cursor: default;
-    z-index: 5;
+    z-index: var(--z-base);
 
     @media screen and (min-width: 600px) {
         padding: 2.75rem 3rem;

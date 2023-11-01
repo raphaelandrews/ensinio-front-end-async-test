@@ -7,7 +7,7 @@ export const LanguageMenuContainer = styled.div`
     text-align: left;
     box-shadow: var(--shadow-base);
     transition: display 0.3s ease-in-out;
-    z-index: 1;
+    z-index: var(--z-tn);
 
     @media (min-width: 1200px) {
         right: inherit;
