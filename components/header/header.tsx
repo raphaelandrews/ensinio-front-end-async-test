@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -46,8 +46,32 @@ const Header = (headerInt: HeaderProps) => {
         setMenuOpen(!menuOpen);
     };
 
+    const headerRef = useRef<HTMLHeadElement | null>(null); 
+
+    useEffect(() => {
+        const handleScroll = () => {
+            if (headerRef.current) {
+                const scrollPosition = window.scrollY;
+                const headerHeight = 30 * 16;
+
+                if (scrollPosition > headerHeight) {
+                    headerRef.current.style.backgroundColor = 'hsl(224, 64%, 58%)';
+                } else {
+                    headerRef.current.style.backgroundColor = 'transparent';
+                }
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+
+
     return (
-        <S.HeaderContainer>
+        <S.HeaderContainer ref={headerRef}>
             <S.HeaderWrapper>
                 <FadeInAnimate initialX={-50} animateX={0} delay={1}>
                     <Link href="/">

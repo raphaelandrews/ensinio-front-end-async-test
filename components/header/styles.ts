@@ -1,16 +1,16 @@
 import styled from 'styled-components';
 
-export const HeaderContainer = styled.div`
+export const HeaderContainer = styled.header`
     position: fixed;
     top: 0;
     width: 100%;
     max-width: 100dvw;
-    background-color: hsl(0, 0%, 0%, 0.03);
+    background-color: var(--header-background);
     backdrop-filter: blur(15px);
     z-index: 1;
 `;
 
-export const HeaderWrapper = styled.header`
+export const HeaderWrapper = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
