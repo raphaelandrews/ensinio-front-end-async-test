@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-import * as S from './styles';
+import * as S from './hero-icons.styles';
 
 import PlaylistsIcon from "@/public/assets/playlists-icon.svg";
 import CertifiedIcon from "@/public/assets/certified-icon.svg";
