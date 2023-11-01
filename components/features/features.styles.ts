@@ -21,7 +21,7 @@ export const FeatuesIntro = styled.div`
     flex-direction: column;
     gap: 1rem;
 
-    h4 {
+    span {
         font-family: ${({ theme }) => theme.fonts.secondary};
         font-size: var(--font-base);
         font-weight: 600;

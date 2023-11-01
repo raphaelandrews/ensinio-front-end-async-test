@@ -4,7 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Variants, motion } from "framer-motion";
 
-import * as S from "./styles";
+import * as S from "./features.styles";
 import { featuresImage } from '@/utils/format-image';
 import { FeaturesData } from '@/types/Features';
 import { FeaturesI18n } from '@/types/i18n';
@@ -14,7 +14,7 @@ import ArrowRightIcon from "@/public/assets/arrow-right-icon.svg";
 import PingAnimate from '@/animations/ping-animate';
 
 import Separator from "@/components/ui/separator/separator";
-import Container from '@/components/container/container';
+import Container from '@/components/ui/container/container';
 
 interface FeaturesProps {
     featuresInt: FeaturesI18n;
@@ -62,7 +62,7 @@ const Features = ({ data, featuresInt, lang }: FeaturesProps) => {
                             height="1px"
                             backgroundColor="hsla(252, 67%, 58%, .5)"
                         />
-                        <h4>{featuresInt.detalhes}</h4>
+                        <span>{featuresInt.detalhes}</span>
                     </div>
                     <p>{featuresInt.recursos}  ⚡️</p>
                 </S.FeatuesIntro>

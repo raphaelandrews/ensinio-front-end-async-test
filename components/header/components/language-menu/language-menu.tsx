@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { motion } from 'framer-motion';
 
-import * as S from './styles';
+import * as S from './language-menu.styles';
 import { i18n } from '@/i18n.config';
 import useLanguageStore from "@/hooks/use-language-menu";
 import ClickOutsideHandler from "@/hooks/use-click-outside";

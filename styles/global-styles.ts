@@ -116,6 +116,12 @@ input[type="submit"] {
   --font-tn: clamp(0.6875rem, 0.6458rem + 0.2083vw, 0.8125rem);
 
   --shadow-base: ${({ theme }) => theme.shadows.base};
+
+  --z-tn: 1;
+  --z-xs: 2;
+  --z-sm: 3;
+  --z-base: 5;
+  --z-lg: 10; 
 }
 
 .solutions__animate {

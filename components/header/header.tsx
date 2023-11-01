@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { AnimatePresence, motion, useAnimation } from 'framer-motion';
 
-import * as S from './styles';
+import * as S from './header.styles';
 import { HeaderI18n } from '@/types/i18n';
 import useSolutionsStore from '@/hooks/use-solutions-menu';
 import useLanguageStore from '@/hooks/use-language-menu';
@@ -21,9 +21,9 @@ import ChevronsDown from "@/public/assets/chevrons-down.svg";
 import PersonIcon from "@/public/assets/person-icon.svg";
 
 import Separator from '@/components/ui/separator/separator';
-import Container from '@/components/container/container';
+import Container from '@/components/ui/container/container';
 import LanguageMenu from './components/language-menu/language-menu';
-import { Button, OutlineButton } from '@/components/button/button';
+import { Button, OutlineButton } from '@/components/ui/button/button';
 import SolutionsMenu from './components/solutions-menu/solutions-menu';
 
 interface HeaderProps {
