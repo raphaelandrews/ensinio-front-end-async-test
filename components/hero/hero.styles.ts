@@ -25,7 +25,7 @@ export const HeroWrapper = styled.div`
         display: flex;
         align-items: center;
         gap: 1rem;
-        font-family: ${({ theme }) => theme.fonts.secondary};
+        font-family: var(--font-secondary);
         font-weight: 600;
         line-height: 105%;
         letter-spacing: 2.4px;

@@ -3,27 +3,6 @@
 import { createGlobalStyle, css } from 'styled-components';
 
 const styles = css`
-@font-face {
-    font-family: 'Bricolage Grotesque';
-    font-style: normal;
-    font-weight: 400;
-    src: url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@200&display=swap') format('woff2');
-}
-
-@font-face {
-    font-family: 'Bricolage Grotesque';
-    font-style: normal;
-    font-weight: 500;
-    src: url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@200&display=swap') format('woff2');
-}
-
-@font-face {
-    font-family: 'Bricolage Grotesque';
-    font-style: normal;
-    font-weight: 600;
-    src: url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@200&display=swap') format('woff2');
-}
-
 *, ::before, ::after {
   margin: 0;
   padding: 0;
@@ -36,7 +15,7 @@ html:focus-within {
 }
 
 body {
-  font-family: var(--primary-font);
+  font-family: var(--font-primary);
   font-size: var(--font-base);
   font-weight: 500;
   text-rendering: optimizeSpeed;
@@ -124,9 +103,6 @@ input[type="submit"] {
   --alternative: ${({ theme }) => theme.colors.alternative};
   --accent: ${({ theme }) => theme.colors.accent};
   --border: ${({ theme }) => theme.colors.border};
-
-  --primary-font: ${({ theme }) => theme.fonts.primary};
-  --secondary-font: ${({ theme }) => theme.fonts.primary};
 
   --font-2xl: clamp(2.25rem, 2.0833rem + 0.8333vw, 2.75rem);
   --font-xl: clamp(1.75rem, 1.6667rem + 0.4167vw, 2rem);

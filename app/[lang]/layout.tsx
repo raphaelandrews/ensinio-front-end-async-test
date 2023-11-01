@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import { Inter, Bricolage_Grotesque } from 'next/font/google';
 
 import Providers from '@/app/providers';
 import { Locale, i18n } from '@/i18n.config';
@@ -43,9 +43,16 @@ export const metadata: Metadata = {
   },
 };
 
-const font = Inter({
+const primary = Inter({
   subsets: ['latin'],
+  variable: '--font-primary',
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"]
+});
+
+const secondary = Bricolage_Grotesque({
+  subsets: ['latin'],
+  variable: '--font-secondary',
+  weight: ["200", "300", "400", "500", "600", "700", "800"]
 });
 
 export async function generateStaticParams() {
@@ -61,7 +68,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang={params.lang}>
-      <body className={font.className}>
+      <body className={`${primary.variable} ${secondary.variable}`}>
         <Providers>
           {children}
         </Providers>

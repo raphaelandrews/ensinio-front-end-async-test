@@ -16,10 +16,6 @@ declare module 'styled-components' {
       accent: string,
       border: string,
   },
-  fonts: {
-      primary: string,
-      secondary: string,
-  },
   shadows: {
       base: string;
   }

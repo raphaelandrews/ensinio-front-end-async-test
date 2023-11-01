@@ -52,7 +52,7 @@ export const SolutionsMenuItem = styled.li`
     cursor: pointer;
 
     h3 {
-        font-family: ${({ theme }) => theme.fonts.secondary};
+        font-family: var(--font-secondary);
         font-size: var(--font-sm);
         font-weight: 600;
         color: var(--primary);
