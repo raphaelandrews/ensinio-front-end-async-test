@@ -11,9 +11,10 @@ import { FeaturesI18n } from '@/types/i18n';
 
 import RocketIcon from "@/public/assets/rocket-icon.svg";
 import ArrowRightIcon from "@/public/assets/arrow-right-icon.svg";
-
-import Separator from "@/components/separator/separator";
 import PingAnimate from '@/animations/ping-animate';
+
+import Separator from "@/components/ui/separator/separator";
+import Container from '@/components/container/container';
 
 interface FeaturesProps {
     featuresInt: FeaturesI18n;
@@ -52,7 +53,7 @@ const Features = ({ data, featuresInt, lang }: FeaturesProps) => {
     }
 
     return (
-        <S.FeaturesContainer>
+        <Container>
             <S.FeaturesWrapper>
                 <S.FeatuesIntro>
                     <div className="features__subtitle">
@@ -61,7 +62,7 @@ const Features = ({ data, featuresInt, lang }: FeaturesProps) => {
                             height="1px"
                             backgroundColor="hsla(252, 67%, 58%, .5)"
                         />
-                        <h3>{featuresInt.detalhes}</h3>
+                        <h4>{featuresInt.detalhes}</h4>
                     </div>
                     <p>{featuresInt.recursos}  ⚡️</p>
                 </S.FeatuesIntro>
@@ -71,7 +72,7 @@ const Features = ({ data, featuresInt, lang }: FeaturesProps) => {
                         <PingAnimate key={item.id} hoverY={-10} duration={0.3}>
                             <S.FeaturesCard >
                                 <Image src={featuresImage(item.id)} alt='Trails Icon' />
-                                <h2>{item.title[lang]}</h2>
+                                <h3>{item.title[lang]}</h3>
                                 <p>{item.description[lang]}</p>
                             </S.FeaturesCard>
                         </PingAnimate>
@@ -93,7 +94,7 @@ const Features = ({ data, featuresInt, lang }: FeaturesProps) => {
                     </motion.div>
                 </S.FeaturesFooter>
             </S.FeaturesWrapper>
-        </S.FeaturesContainer>
+        </Container>
     );
 }
 

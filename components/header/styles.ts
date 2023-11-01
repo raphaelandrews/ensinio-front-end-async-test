@@ -14,29 +14,26 @@ export const HeaderWrapper = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color: ${({ theme }) => theme.colors.background};
-    width: 90%;
-    max-width: 1280px;
+    color: var(--background);
     padding: 1.5rem 0;
-    margin: 0 auto;
 `
 
 interface MenuContainerProps {
-    menuOpen: boolean;
+    menuopen: boolean;
 }
 
 export const MenuContainer = styled.div<MenuContainerProps>`
     position: absolute;
     top: 100%;
     right: 0;
-    display: ${(props) => (props.menuOpen ? 'flex' : 'none')};
+    display: ${(props) => (props.menuopen ? 'flex' : 'none')};
     flex-direction: column;
     align-items: center;
     gap: 2.5rem;
     padding: 1.5rem;
     border-radius: .375rem;
     background-color: hsl(224, 64%, 58%);
-    box-shadow: rgba(0, 0, 0, 0.16) -4px 4px 14px;
+    box-shadow: var(--shadow-base);
 
     .header__separator {
         display: none;
@@ -79,9 +76,9 @@ export const NavItem = styled.li`
         display: flex;
         align-items: center;
         gap: .75rem;
-        font-size: .9375rem;
+        font-size: var(--font-sm);
         font-weight: 500;
-        color: ${({ theme }) => theme.colors.background};
+        color: var(--background);
         line-height: 105%;
     }
 `;
@@ -111,6 +108,6 @@ export const HamburgerMenu = styled.div`
     div {
         width: 1.5rem;
         height: 3px;
-        background-color: ${({ theme }) => theme.colors.background};
+        background-color: var(--background);
     }
 `;

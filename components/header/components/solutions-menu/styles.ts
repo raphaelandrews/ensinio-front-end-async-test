@@ -11,8 +11,8 @@ export const SolutionsMenuContainer = styled.div`
     white-space: nowrap;
     padding: 1.5rem 2.5rem;
     border-radius: 6px;
-    background-color: ${({ theme }) => theme.colors.background};
-    box-shadow: rgba(0, 0, 0, 0.16) -4px 4px 14px;
+    background-color: var(--background);
+    box-shadow: var(--shadow-base);
     transition: display 0.3s ease-in-out;
     cursor: default;
     z-index: 5;
@@ -27,9 +27,9 @@ export const SolutionsMenuContainer = styled.div`
     }
 
     h2 {
-        font-size: .875rem;
+        font-size: var(--font-xs);
         font-weight: 600;
-        color: ${({ theme }) => theme.colors.tertiary};
+        color: var(--tertiary);
         letter-spacing: 0.15em;
         line-height: 105%;
         text-transform: uppercase;
@@ -53,17 +53,17 @@ export const SolutionsMenuItem = styled.li`
 
     h3 {
         font-family: ${({ theme }) => theme.fonts.secondary};
-        font-size: .9375rem;
+        font-size: var(--font-sm);
         font-weight: 600;
-        color: ${({ theme }) => theme.colors.primary};
+        color: var(--primary);
         margin-bottom: .125rem;
         line-height: 125%;
         letter-spacing: 0.075px;
     }
     p {
-        font-size: .8125rem;
+        font-size: var(--font-tn);
         font-weight: 400;
-        color: ${({ theme }) => theme.colors.muted};
+        color: var(--muted);
         line-height: 150%;
     }
 

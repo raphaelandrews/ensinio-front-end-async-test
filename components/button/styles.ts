@@ -5,14 +5,14 @@ export const Button = styled.button`
     display: flex;
     align-items: center;
     gap: .75rem;
-    font-size: .9375rem;
+    font-size: var(--font-sm);
     font-weight: 600;
-    color: ${({ theme }) => theme.colors.background};
+    color: var(--background);
     line-height: 105%;
 `
 
 export const OutlineButton = styled(Button)`
     padding: .75rem 1.5rem;
-    border: 1px solid hsla(0, 0%, 100%, .5);
+    border: 1px solid hsla(0 , 0%, 100, .5);
     border-radius: 5rem;
 `

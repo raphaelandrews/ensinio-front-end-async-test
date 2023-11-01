@@ -3,7 +3,8 @@ import { Variants, motion } from 'framer-motion';
 
 interface JumpVariants extends Variants {
   hover: {
-    y: number;
+    y?: number;
+    x?: number;
     transition: {
       duration: number;
       repeat: number;
@@ -12,23 +13,39 @@ interface JumpVariants extends Variants {
   };
 }
 
-const jumpVariants: JumpVariants = {
-  initial: {
-    y: 0,
-  },
-  hover: {
-    y: 50,
-    transition: {
-      duration: 0.6,
-      repeat: Infinity,
-      repeatType: 'reverse',
-    },
-  },
-};
+interface JumpAnimateProps {
+  hoverY?: number;
+  hoverX?: number;
+  duration: number;
+  className?: string;
+  children: ReactNode;
+}
 
-const JumpAnimate = ({ children }: { children: ReactNode }) => {
+const JumpAnimate = ({ 
+  hoverY, 
+  hoverX, 
+  duration,
+  className,
+  children 
+}: JumpAnimateProps) => {
+  const jumpVariants: JumpVariants = {
+    initial: {
+      y: 0,
+      x: 0,
+    },
+    hover: {
+      y: hoverY,
+      x: hoverX,
+      transition: {
+        duration: duration,
+        repeat: Infinity,
+        repeatType: 'reverse',
+      },
+    },
+  };
+
   return (
-    <motion.div variants={jumpVariants} whileHover="hover">
+    <motion.div variants={jumpVariants} whileHover="hover" className={className}>
       {children}
     </motion.div>
   );

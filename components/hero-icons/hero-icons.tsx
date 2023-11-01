@@ -1,5 +1,4 @@
-import Image from "next/image"
-import { Variants, motion } from 'framer-motion';
+import Image from "next/image";
 
 import * as S from './styles';
 
@@ -19,7 +18,7 @@ const HomeIcons = () => {
                 <ShakeAnimate >
                     <Image src={CertifiedIcon} alt="Certified Icon" />
                 </ShakeAnimate>
-                <JumpAnimate>
+                <JumpAnimate hoverY={50} duration={0.6}>
                     <Image src={PlaylistsIcon} alt="Playlists Icon" />
                 </JumpAnimate>
             </S.HomeIconsWrapper>

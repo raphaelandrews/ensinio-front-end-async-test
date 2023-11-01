@@ -1,19 +1,13 @@
 import styled from 'styled-components';
 
-export const FeaturesContainer = styled.section`
-`
-
 export const FeaturesWrapper = styled.div`
     display: flex;
     flex-direction: column;
     padding: 6rem 0;
-    width: 90%;
-    max-width: 1280px;
-    margin: 0 auto;
 
     h2 {
         font-family: ${({ theme }) => theme.fonts.secondary};
-        font-size: 2rem;
+        font-size: var(--font-xl);
         font-weight: 400;
         line-height: 125%;
         letter-spacing: 0.16px;
@@ -27,11 +21,11 @@ export const FeatuesIntro = styled.div`
     flex-direction: column;
     gap: 1rem;
 
-    h3 {
+    h4 {
         font-family: ${({ theme }) => theme.fonts.secondary};
-        font-size: 1rem;
+        font-size: var(--font-base);
         font-weight: 600;
-        color: ${({ theme }) => theme.colors.secondary};
+        color: var(--secondary);
         line-height: 105%;
         letter-spacing: 2.4px;
         text-transform: uppercase;
@@ -39,7 +33,7 @@ export const FeatuesIntro = styled.div`
 
     p {
         font-weight: 400;
-        color: ${({ theme }) => theme.colors.muted};
+        color: var(--muted);
         line-height: 150%;
         align-self: end;
     }
@@ -80,9 +74,9 @@ export const FeaturesCard = styled.article`
     max-width: 280px;
     cursor: pointer;
 
-    h2 {
+    h3 {
         font-family: ${({ theme }) => theme.fonts.secondary};
-        font-size: 1.25rem;
+        font-size: var(--font-lg);
         font-weight: 600;
         line-height: 125%;
         letter-spacing: 0.1px;
@@ -91,7 +85,7 @@ export const FeaturesCard = styled.article`
 
     p {
         font-weight: 400;
-        color: ${({ theme }) => theme.colors.muted};
+        color: var(--muted);
         line-height: 150%;
         margin-top: .75rem;
     }
@@ -108,7 +102,7 @@ export const FeaturesFooter = styled.div`
         align-items: center;
         gap: 2rem;
         font-weight: 600;
-        color: ${({ theme }) => theme.colors.tertiary};
+        color: var(--tertiary);
         line-height: 125%;
     }
     
@@ -117,7 +111,7 @@ export const FeaturesFooter = styled.div`
         align-items: center;
         gap: 2rem;
         font-weight: 500;
-        color: ${({ theme }) => theme.colors.muted};
+        color: var(--muted);
         line-height: 150%;
     }
 

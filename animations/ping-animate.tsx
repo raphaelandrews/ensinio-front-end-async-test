@@ -20,11 +20,12 @@ interface PingAnimateProps {
     children: ReactNode;
 }
 
-const PingAnimate = ({ 
-    hoverY, 
+const PingAnimate = ({
+    hoverY,
     hoverX,
-    duration, 
-    children }: PingAnimateProps) => {
+    duration,
+    children
+}: PingAnimateProps) => {
     const animationVariants: AnimationVariants = {
         initial: {
             y: 0,
@@ -39,7 +40,7 @@ const PingAnimate = ({
             },
         },
     };
-    
+
     return (
         <motion.div
             whileHover="hover"
