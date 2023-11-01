@@ -1,16 +1,27 @@
+import Image from "next/image"
+import { Variants, motion } from 'framer-motion';
+
 import * as S from './styles';
 
-import Image from "next/image"
-import PlaylistsIcon from "@/public/assets/playlists-icon.svg"
-import CertifiedIcon from "@/public/assets/certified-icon.svg"
+import PlaylistsIcon from "@/public/assets/playlists-icon.svg";
+import CertifiedIcon from "@/public/assets/certified-icon.svg";
+import PingAnimate from "@/animations/ping-animate";
+import ShakeAnimate from "@/animations/shake-animate";
+import JumpAnimate from "@/animations/jump-animate";
 
 const HomeIcons = () => {
     return (
         <S.HomeIconsContainer>
             <S.HomeIconsWrapper>
-                <Image src={PlaylistsIcon} alt="Playlists Icon" />
-                <Image src={CertifiedIcon} alt="CerfifiedIcon" />
-                <Image src={PlaylistsIcon} alt="Playlists Icon" />
+                <PingAnimate hoverY={50} hoverX={50} duration={0.6}>
+                    <Image src={PlaylistsIcon} alt="Playlists Icon" />
+                </PingAnimate>
+                <ShakeAnimate >
+                    <Image src={CertifiedIcon} alt="Certified Icon" />
+                </ShakeAnimate>
+                <JumpAnimate>
+                    <Image src={PlaylistsIcon} alt="Playlists Icon" />
+                </JumpAnimate>
             </S.HomeIconsWrapper>
         </S.HomeIconsContainer>
     );

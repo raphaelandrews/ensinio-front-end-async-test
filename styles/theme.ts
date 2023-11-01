@@ -12,7 +12,7 @@ const theme = {
     },
     fonts: {
         primary: 'Inter, sans-serif',
-        secondary: 'Degular, sans-serif',
+        secondary: 'Bricolage Grotesque, sans-serif',
     },
 };
 

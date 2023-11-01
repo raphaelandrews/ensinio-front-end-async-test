@@ -58,12 +58,15 @@ export const SolutionsMenuItem = styled.li`
         color: ${({ theme }) => theme.colors.primary};
         margin-bottom: .125rem;
         line-height: 125%;
+        letter-spacing: 0.075px;
     }
     p {
         font-size: .8125rem;
+        font-weight: 400;
         color: ${({ theme }) => theme.colors.muted};
         line-height: 150%;
     }
+
     @media screen and (min-width: 400px) {
         grid-template-columns: auto 1fr;
         grid-template-rows: 1fr;

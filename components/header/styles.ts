@@ -56,23 +56,6 @@ export const MenuContainer = styled.div<MenuContainerProps>`
     }
 `;
 
-export const HamburgerMenu = styled.div`
-    display: flex;
-    flex-direction: column;
-    gap: 0.375rem;
-    cursor: pointer;
-
-    @media screen and (min-width: 1200px) {
-        display: none;
-    }
-
-    div {
-        width: 1.5rem;
-        height: 3px;
-        background-color: ${({ theme }) => theme.colors.background};
-    }
-`;
-
 export const NavList = styled.ul`
     display: flex;
     flex-direction: column;
@@ -89,6 +72,7 @@ export const NavItem = styled.li`
     .solutions__menu:hover {
         cursor: pointer;
     }
+    
     a,
     .solutions__menu  {
         position: relative;
@@ -113,3 +97,20 @@ export const HeaderButtons = styled.div`
         gap: 2.5rem;
     }
 `
+
+export const HamburgerMenu = styled.div`
+    display: flex;
+    flex-direction: column;
+    gap: 0.375rem;
+    cursor: pointer;
+
+    @media screen and (min-width: 1200px) {
+        display: none;
+    }
+
+    div {
+        width: 1.5rem;
+        height: 3px;
+        background-color: ${({ theme }) => theme.colors.background};
+    }
+`;

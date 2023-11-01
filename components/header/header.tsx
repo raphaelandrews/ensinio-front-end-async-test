@@ -87,28 +87,28 @@ const Header = (headerInt: HeaderProps) => {
                                     </div>
                                 </S.NavItem>
                                 <S.NavItem>
-                                    <PingAnimate hoverY={4}>
+                                    <PingAnimate hoverY={4} duration={0.3}>
                                         <Link href='https://ndrws.dev' target='_blank'>
                                             {headerInt.headerInt.navbar.preco}
                                         </Link>
                                     </PingAnimate>
                                 </S.NavItem>
                                 <S.NavItem>
-                                    <PingAnimate hoverY={4}>
+                                    <PingAnimate hoverY={4} duration={0.3}>
                                         <Link href='https://ndrws.dev' target='_blank'>
                                             {headerInt.headerInt.navbar.academy}
                                         </Link>
                                     </PingAnimate>
                                 </S.NavItem>
                                 <S.NavItem>
-                                    <PingAnimate hoverY={4}>
+                                    <PingAnimate hoverY={4} duration={0.3}>
                                         <Link href='https://ndrws.dev' target='_blank'>
                                             {headerInt.headerInt.navbar.blog}
                                         </Link>
                                     </PingAnimate>
                                 </S.NavItem>
                                 <S.NavItem>
-                                    <PingAnimate hoverY={4}>
+                                    <PingAnimate hoverY={4} duration={0.3}>
                                         <Link href='https://ndrws.dev' target='_blank'>
                                             {headerInt.headerInt.navbar.contato}
                                         </Link>
