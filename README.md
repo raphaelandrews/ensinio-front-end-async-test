@@ -2,8 +2,8 @@
 
 This is a test for an internship opportunity at [Ensinio](https://ensinio.com). Built by **[ndrws](https://ndrews.dev).**
 
-- [Test requirements](https://github.com/EnsinioOrg/front-end-async-test)
-- [Deployment link](ensinio-frontend-ndrws.vercel.app)
+**[Test requirements](https://github.com/EnsinioOrg/front-end-async-test)** <br/>
+**[Deployment link](ensinio-frontend-ndrws.vercel.app)**
 
 ## Stack
 
