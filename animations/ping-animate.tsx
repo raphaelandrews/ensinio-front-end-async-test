@@ -12,21 +12,26 @@ interface AnimationVariants extends Variants {
     };
 }
 
-const animationVariants: AnimationVariants = {
-    initial: {
-        y: 0,
-    },
-    hover: {
-        y: 4,
-        transition: {
-            duration: 0.3,
-            repeat: 1,
-            repeatType: 'reverse',
-        },
-    },
-};
+interface PingAnimateProps {
+    hoverY: number;
+    children: ReactNode;
+}
 
-const PingAnimate = ({ children }: { children: ReactNode }) => {
+const PingAnimate = ({ hoverY, children }: PingAnimateProps) => {
+    const animationVariants: AnimationVariants = {
+        initial: {
+            y: 0,
+        },
+        hover: {
+            y: hoverY,
+            transition: {
+                duration: 0.3,
+                repeat: 1,
+                repeatType: 'reverse',
+            },
+        },
+    };
+    
     return (
         <motion.div
             whileHover="hover"

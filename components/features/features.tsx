@@ -68,7 +68,7 @@ const Features = ({ data, featuresInt, lang }: FeaturesProps) => {
                 <h2>{featuresInt.titulo}</h2>
                 <S.FeaturesCards>
                     {data.map((item) => (
-                        <PingAnimate key={item.id}>
+                        <PingAnimate key={item.id} hoverY={-10}>
                             <S.FeaturesCard >
                                 <Image src={featuresImage(item.id)} alt='Trails Icon' />
                                 <h2>{item.title[lang]}</h2>

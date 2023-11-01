@@ -5,6 +5,7 @@ export const LanguageMenuContainer = styled.div`
     top: 1.5rem;
     right: -50%;
     text-align: left;
+    box-shadow: rgba(0, 0, 0, 0.16) -4px 4px 14px;
     transition: display 0.3s ease-in-out;
     z-index: 1;
 

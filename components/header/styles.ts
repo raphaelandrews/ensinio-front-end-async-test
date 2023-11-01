@@ -6,7 +6,7 @@ export const HeaderContainer = styled.div`
     width: 100%;
     max-width: 100dvw;
     background-color: hsl(0, 0%, 0%, 0.03);
-    backdrop-filter: blur(30px);
+    backdrop-filter: blur(15px);
     z-index: 1;
 `;
 

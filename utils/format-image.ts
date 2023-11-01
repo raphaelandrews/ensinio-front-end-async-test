@@ -1,5 +1,5 @@
 import TrailsIcon from "@/public/assets/trail-icon.svg";
-import PlaylistsIcon from "@/public/assets/playlists-icon.svg";
+import PlaylistIcon from "@/public/assets/playlist-icon.svg";
 import FolderIcon from "@/public/assets/folder-icon.svg";
 
 export const featuresImage = (id: number) => {
@@ -9,7 +9,7 @@ export const featuresImage = (id: number) => {
             iconComponent = TrailsIcon;
             break;
         case 2:
-            iconComponent = PlaylistsIcon;
+            iconComponent = PlaylistIcon;
             break;
         case 3:
             iconComponent = FolderIcon;

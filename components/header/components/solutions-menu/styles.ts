@@ -12,6 +12,7 @@ export const SolutionsMenuContainer = styled.div`
     padding: 1.5rem 2.5rem;
     border-radius: 6px;
     background-color: ${({ theme }) => theme.colors.background};
+    box-shadow: rgba(0, 0, 0, 0.16) -4px 4px 14px;
     transition: display 0.3s ease-in-out;
     cursor: default;
     z-index: 5;

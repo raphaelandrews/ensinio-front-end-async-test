@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button matches Button component snapshot 1`] = `
+<div>
+  <button
+    class="sc-bdnyFh dPWmqE"
+  >
+    Click Me
+  </button>
+</div>
+`;
+
+exports[`Button matches OutlineButton component snapshot 1`] = `
+<div>
+  <button
+    class="sc-bdnyFh dPWmqE"
+  >
+    Click Me
+  </button>
+</div>
+`;
