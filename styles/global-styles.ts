@@ -3,6 +3,27 @@
 import { createGlobalStyle, css } from 'styled-components';
 
 const styles = css`
+@font-face {
+    font-family: 'Bricolage Grotesque';
+    font-style: normal;
+    font-weight: 400;
+    src: url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@200&display=swap') format('woff2');
+}
+
+@font-face {
+    font-family: 'Bricolage Grotesque';
+    font-style: normal;
+    font-weight: 500;
+    src: url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@200&display=swap') format('woff2');
+}
+
+@font-face {
+    font-family: 'Bricolage Grotesque';
+    font-style: normal;
+    font-weight: 600;
+    src: url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@200&display=swap') format('woff2');
+}
+
 *, ::before, ::after {
   margin: 0;
   padding: 0;
@@ -140,9 +161,7 @@ input[type="submit"] {
 }
 `;
 
-const GlobalStyles = createGlobalStyle`
- @import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200;12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&display=swap');
- 
+const GlobalStyles = createGlobalStyle` 
   ${styles}
 `;
 
