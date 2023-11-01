@@ -8,11 +8,8 @@ export const HeroContainer = styled.section`
 export const HeroWrapper = styled.div`
     display: flex;
     flex-direction: column;
-    color: ${({ theme }) => theme.colors.background};
-    width: 90%;
-    max-width: 1280px;
+    color: var(--background);
     height: auto;
-    margin: 0 auto;
 
     .hero__content {
         display: flex;
@@ -21,7 +18,7 @@ export const HeroWrapper = styled.div`
         align-items: center;
         gap: 3rem;
         text-align: center;
-        padding-top: 3rem;
+        padding-top: 6rem;
     }
 
     span {
@@ -40,7 +37,7 @@ export const HeroWrapper = styled.div`
     }
 
     h1 {
-        font-size: 2.75rem;
+        font-size: var(--font-2xl);
         font-weight: 500;
         line-height: 110%;
         letter-spacing: -1.32px;
@@ -64,15 +61,15 @@ export const HeroWrapper = styled.div`
     }
 
     .hero__buttons___cta {
-        color: ${({ theme }) => theme.colors.primary};
+        color: var(--primary);
         padding: 1rem 2rem;
         border-radius: 5rem;
-        background-color: ${({ theme }) => theme.colors.accent};
+        background-color: var(--accent);
     }
 
     .hero__buttons___play {
         gap: .5rem;
-        color: ${({ theme }) => theme.colors.background};
+        color: var(--background);
     }
 
     .hero__image {
@@ -110,6 +107,6 @@ export const HeroWrapper = styled.div`
     }
     
     @media screen and (min-width: 1200px) {
-        height: 40rem;
+        height: 38rem;
     }
 `

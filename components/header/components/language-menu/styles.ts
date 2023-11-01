@@ -5,6 +5,7 @@ export const LanguageMenuContainer = styled.div`
     top: 1.5rem;
     right: -50%;
     text-align: left;
+    box-shadow: var(--shadow-base);
     transition: display 0.3s ease-in-out;
     z-index: 1;
 
@@ -17,7 +18,7 @@ export const LanguageMenuList = styled.ul`
     display: flex;
     flex-direction: column;
     border-radius: .5rem;
-    background-color: ${({ theme }) => theme.colors.background};
+    background-color: var(--background);
 
     .active,
     :hover {
@@ -32,7 +33,7 @@ export const LanguageMenuItem = styled.li`
         display: flex;
         align-items: center;
         gap: .625rem;
-        font-size: .9375rem;
+        font-size: var(--font-sm);
         font-weight: 500;
         color: hsl(258, 9%, 37%);
         text-transform: uppercase;

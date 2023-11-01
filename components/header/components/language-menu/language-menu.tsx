@@ -25,7 +25,9 @@ const LanguageMenu = () => {
     const redirectedPathName = (locale: string) => `/${locale}`;
 
     return (
-        <ClickOutsideHandler onOutsideClick={handleOutsideClick} className="language__animate">
+        <ClickOutsideHandler
+            onOutsideClick={handleOutsideClick}
+            className="language__animate">
             <motion.div
                 initial={{ opacity: 0, scale: 0.5 }}
                 animate={{ opacity: 1, scale: 1 }}

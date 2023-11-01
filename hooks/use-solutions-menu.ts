@@ -2,6 +2,7 @@ import { create } from 'zustand';
 
 interface SolutionsStoreState {
     solutionsOpen: boolean;
+    lastUpdateTime: number;
 }
 
 interface SolutionsStoreActions {
@@ -10,7 +11,19 @@ interface SolutionsStoreActions {
 
 const useSolutionsStore = create<SolutionsStoreState & SolutionsStoreActions>((set) => ({
     solutionsOpen: false,
-    setSolutionsOpen: (isOpen) => set({ solutionsOpen: isOpen }),
+    lastUpdateTime: 0,
+    setSolutionsOpen: (isOpen) => {
+        const currentTime = Date.now();
+        set((prevState) => {
+            if (currentTime - prevState.lastUpdateTime >= 100) {
+                return {
+                    solutionsOpen: isOpen,
+                    lastUpdateTime: currentTime,
+                };
+            }
+            return prevState;
+        });
+    },
 }));
 
 export default useSolutionsStore;

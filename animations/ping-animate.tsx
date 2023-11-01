@@ -3,7 +3,8 @@ import { Variants, motion } from 'framer-motion';
 
 interface AnimationVariants extends Variants {
     hover: {
-        y: number;
+        y?: number;
+        x?: number;
         transition: {
             duration: number;
             repeat: number;
@@ -12,21 +13,34 @@ interface AnimationVariants extends Variants {
     };
 }
 
-const animationVariants: AnimationVariants = {
-    initial: {
-        y: 0,
-    },
-    hover: {
-        y: 4,
-        transition: {
-            duration: 0.3,
-            repeat: 1,
-            repeatType: 'reverse',
-        },
-    },
-};
+interface PingAnimateProps {
+    hoverY?: number;
+    hoverX?: number;
+    duration: number;
+    children: ReactNode;
+}
 
-const PingAnimate = ({ children }: { children: ReactNode }) => {
+const PingAnimate = ({
+    hoverY,
+    hoverX,
+    duration,
+    children
+}: PingAnimateProps) => {
+    const animationVariants: AnimationVariants = {
+        initial: {
+            y: 0,
+        },
+        hover: {
+            y: hoverY,
+            x: hoverX,
+            transition: {
+                duration: duration,
+                repeat: 1,
+                repeatType: 'reverse',
+            },
+        },
+    };
+
     return (
         <motion.div
             whileHover="hover"

@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { Inter } from 'next/font/google';
 
 import Providers from '@/app/providers';
 import { Locale, i18n } from '@/i18n.config';
@@ -42,6 +43,11 @@ export const metadata: Metadata = {
   },
 };
 
+const font = Inter({
+  subsets: ['latin'],
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"]
+});
+
 export async function generateStaticParams() {
   return i18n.locales.map(locale => ({ lang: locale }))
 }
@@ -55,7 +61,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang={params.lang}>
-      <body>
+      <body className={font.className}>
         <Providers>
           {children}
         </Providers>

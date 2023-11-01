@@ -12,8 +12,11 @@ const theme = {
     },
     fonts: {
         primary: 'Inter, sans-serif',
-        secondary: 'Degular, sans-serif',
+        secondary: 'Bricolage Grotesque, sans-serif',
     },
+    shadows: {
+        base: 'hsla(0, 0%, 0%, .16) -4px 4px 14px',
+    }
 };
 
 export default theme;

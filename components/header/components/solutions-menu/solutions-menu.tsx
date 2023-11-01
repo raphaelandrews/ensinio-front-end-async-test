@@ -26,7 +26,9 @@ const SolutionsMenu = (headerInt: HeaderProps) => {
     };
 
     return (
-        <ClickOutsideHandler onOutsideClick={handleOutsideClick} className='solutions__animate'>
+        <ClickOutsideHandler
+            onOutsideClick={handleOutsideClick}
+            className='solutions__animate'>
             <motion.div
                 initial={{ opacity: 0, scale: 0.5 }}
                 animate={{ opacity: 1, scale: 1 }}
@@ -39,7 +41,7 @@ const SolutionsMenu = (headerInt: HeaderProps) => {
                 <S.SolutionsMenuContainer onMouseLeave={() => setSolutionsOpen(false)}>
                     <h2>{headerInt.headerInt.submenu.titulo}</h2>
                     <S.SolutionsMenuList>
-                        <PingAnimate>
+                        <PingAnimate hoverY={4} duration={0.3}>
                             <S.SolutionsMenuItem>
                                 <Image src={EadIcon} alt='Ead Icon' />
                                 <div>
@@ -48,7 +50,7 @@ const SolutionsMenu = (headerInt: HeaderProps) => {
                                 </div>
                             </S.SolutionsMenuItem>
                         </PingAnimate>
-                        <PingAnimate>
+                        <PingAnimate hoverY={4} duration={0.3}>
                             <S.SolutionsMenuItem>
                                 <Image src={CommunityIcon} alt='Ead Icon' />
                                 <div>
@@ -57,7 +59,7 @@ const SolutionsMenu = (headerInt: HeaderProps) => {
                                 </div>
                             </S.SolutionsMenuItem>
                         </PingAnimate>
-                        <PingAnimate>
+                        <PingAnimate hoverY={4} duration={0.3}>
                             <S.SolutionsMenuItem>
                                 <Image src={GamificationIcon} alt='Ead Icon' />
                                 <div>
@@ -66,7 +68,7 @@ const SolutionsMenu = (headerInt: HeaderProps) => {
                                 </div>
                             </S.SolutionsMenuItem>
                         </PingAnimate>
-                        <PingAnimate>
+                        <PingAnimate hoverY={4} duration={0.3}>
                             <S.SolutionsMenuItem>
                                 <Image src={AppIcon} alt='Ead Icon' />
                                 <div>
