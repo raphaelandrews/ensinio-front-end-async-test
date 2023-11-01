@@ -53,48 +53,50 @@ const Features = ({ data, featuresInt, lang }: FeaturesProps) => {
     }
 
     return (
-        <Container>
-            <S.FeaturesWrapper>
-                <S.FeatuesIntro>
-                    <div className="features__subtitle">
-                        <Separator
-                            width="40px"
-                            height="1px"
-                            backgroundColor="hsla(252, 67%, 58%, .5)"
-                        />
-                        <span>{featuresInt.detalhes}</span>
-                    </div>
-                    <p>{featuresInt.recursos}  ⚡️</p>
-                </S.FeatuesIntro>
-                <h2>{featuresInt.titulo}</h2>
-                <S.FeaturesCards>
-                    {data.map((item) => (
-                        <PingAnimate key={item.id} hoverY={-10} duration={0.3}>
-                            <S.FeaturesCard >
-                                <Image src={featuresImage(item.id)} alt='Trails Icon' />
-                                <h3>{item.title[lang]}</h3>
-                                <p>{item.description[lang]}</p>
-                            </S.FeaturesCard>
-                        </PingAnimate>
-                    ))}
-                </S.FeaturesCards>
-                <Separator width='100%' height='1px' backgroundColor='hsl(240, 4%, 91%)' />
-                <S.FeaturesFooter>
-                    <div className='features__footer___content'>
-                        <Image src={RocketIcon} alt='Rocket Icon' />
-                        <p>{featuresInt.maisRecursos}</p>
-                    </div>
-                    <motion.div whileHover="hover">
-                        <Link href='https://ndrws.dev' target='_blank'>
-                            {featuresInt.mais}
-                            <motion.div variants={animationVariants} className='features__footer___image'>
-                                <Image src={ArrowRightIcon} alt="Arrow Right Icon" />
-                            </motion.div>
-                        </Link>
-                    </motion.div>
-                </S.FeaturesFooter>
-            </S.FeaturesWrapper>
-        </Container>
+        <S.FeaturesContainer>
+            <Container>
+                <S.FeaturesWrapper>
+                    <S.FeatuesIntro>
+                        <div className="features__subtitle">
+                            <Separator
+                                width="40px"
+                                height="1px"
+                                backgroundColor="hsla(252, 67%, 58%, .5)"
+                            />
+                            <span>{featuresInt.detalhes}</span>
+                        </div>
+                        <p>{featuresInt.recursos}  ⚡️</p>
+                    </S.FeatuesIntro>
+                    <h2>{featuresInt.titulo}</h2>
+                    <S.FeaturesCards>
+                        {data.map((item) => (
+                            <PingAnimate key={item.id} hoverY={-10} duration={0.3}>
+                                <S.FeaturesCard >
+                                    <Image src={featuresImage(item.id)} alt='Trails Icon' />
+                                    <h3>{item.title[lang]}</h3>
+                                    <p>{item.description[lang]}</p>
+                                </S.FeaturesCard>
+                            </PingAnimate>
+                        ))}
+                    </S.FeaturesCards>
+                    <Separator width='100%' height='1px' backgroundColor='hsl(240, 4%, 91%)' />
+                    <S.FeaturesFooter>
+                        <div className='features__footer___content'>
+                            <Image src={RocketIcon} alt='Rocket Icon' />
+                            <p>{featuresInt.maisRecursos}</p>
+                        </div>
+                        <motion.div whileHover="hover">
+                            <Link href='https://ndrws.dev' target='_blank'>
+                                {featuresInt.mais}
+                                <motion.div variants={animationVariants} className='features__footer___image'>
+                                    <Image src={ArrowRightIcon} alt="Arrow Right Icon" />
+                                </motion.div>
+                            </Link>
+                        </motion.div>
+                    </S.FeaturesFooter>
+                </S.FeaturesWrapper>
+            </Container>
+        </S.FeaturesContainer>
     );
 }
 
