@@ -1,5 +1,5 @@
 import { fireEvent, render, screen } from '@testing-library/react';
-import { Button, OutlineButton } from "@/components/button/button"
+import { Button, OutlineButton } from "@/components/ui/button/button"
 
 import Providers from '@/app/providers';
 

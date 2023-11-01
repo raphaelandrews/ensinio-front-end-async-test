@@ -10,10 +10,6 @@ const theme = {
         accent: 'hsl(182, 100%, 45%)',
         border: 'hsl(240, 4%, 91%)',
     },
-    fonts: {
-        primary: 'Inter, sans-serif',
-        secondary: 'Bricolage Grotesque, sans-serif',
-    },
     shadows: {
         base: 'hsla(0, 0%, 0%, .16) -4px 4px 14px',
     }

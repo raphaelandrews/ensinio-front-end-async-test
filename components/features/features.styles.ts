@@ -6,7 +6,7 @@ export const FeaturesWrapper = styled.div`
     padding: 6rem 0;
 
     h2 {
-        font-family: ${({ theme }) => theme.fonts.secondary};
+        font-family: var(--font-secondary);
         font-size: var(--font-xl);
         font-weight: 400;
         line-height: 125%;
@@ -22,7 +22,7 @@ export const FeatuesIntro = styled.div`
     gap: 1rem;
 
     span {
-        font-family: ${({ theme }) => theme.fonts.secondary};
+        font-family: var(--font-secondary);
         font-size: var(--font-base);
         font-weight: 600;
         color: var(--secondary);
@@ -75,7 +75,7 @@ export const FeaturesCard = styled.article`
     cursor: pointer;
 
     h3 {
-        font-family: ${({ theme }) => theme.fonts.secondary};
+        font-family: var(--font-secondary);
         font-size: var(--font-lg);
         font-weight: 600;
         line-height: 125%;
