@@ -13,6 +13,6 @@ export const Button = styled.button`
 
 export const OutlineButton = styled(Button)`
     padding: .75rem 1.5rem;
-    border: 1px solid hsla(0 , 0%, 100, .5);
+    border: 1px solid hsla(0, 0%, 100%, .5);
     border-radius: 5rem;
 `
