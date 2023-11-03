@@ -4,6 +4,7 @@ export const HomeIconsContainer = styled.div`
     position: absolute;
     top: 2.75rem;
     width: 100dvw;
+    max-width: 100%;
 `
 
 export const HomeIconsWrapper = styled.div`
