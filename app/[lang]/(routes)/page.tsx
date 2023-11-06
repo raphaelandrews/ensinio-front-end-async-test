@@ -20,7 +20,7 @@ export const metadata: Metadata = {
         siteName: siteConfig.name,
         images: [
             {
-                url: `${siteConfig.ogImage}`,
+                url: `${siteConfig.url}/og.webp`,
                 width: 1128,
                 height: 592,
             },
