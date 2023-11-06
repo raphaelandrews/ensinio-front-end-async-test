@@ -20,7 +20,7 @@ export const metadata: Metadata = {
         siteName: siteConfig.name,
         images: [
             {
-                url: `https://raw.githubusercontent.com/raphaelandrews/ensinio-frontend-challenge/main/public/og.webp`,
+                url: `${siteConfig.url}/og.webp`,
                 width: 1128,
                 height: 592,
             },
