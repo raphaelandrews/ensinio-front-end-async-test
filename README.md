@@ -3,7 +3,7 @@
 This is a test for an internship opportunity at [Ensinio](https://ensinio.com). Built by **[ndrws](https://ndrws.dev).**
 
 **[Test requirements](https://github.com/EnsinioOrg/front-end-async-test)** <br/>
-**[Deployment link](https://ensinio-frontend-ndrws.vercel.app/pt)**
+**[Deployment link](https://ensinio-front-end-async-test-ndrws.vercel.app/pt)**
 
 ## Stack
 
@@ -15,15 +15,15 @@ This is a test for an internship opportunity at [Ensinio](https://ensinio.com). 
 - **Tests**: Jest and React Testing Library
 - **i18n**: Native Next.js i18n
 - **Package management**: PNPM
-- **Microfrontend**: Tried with Module Federation, but no support for App dir yet.
+- **Microfrontend**: Tried with Module Federation, but no support for App router yet. So implemented here with Pages router: [Ensinio Frontend Async Test with Microfrontends](https://github.com/raphaelandrews/ensinio-front-end-async-test-with-microfrontends).
 
 ## Run
 
 ### App
 
 ```bash
-git clone https://github.com/raphaelandrews/ensinio-frontend-challenge.git
-cd ensinio-frontend-challenge
+git clone https://github.com/raphaelandrews/ensinio-front-end-async-test.git
+cd ensinio-front-end-async-test
 code .
 pnpm install
 pnpm dev
